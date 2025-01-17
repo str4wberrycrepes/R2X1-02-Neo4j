@@ -1,2 +1,2 @@
 match(n)
-return ave(n.iq)
+return avg(n.iq)

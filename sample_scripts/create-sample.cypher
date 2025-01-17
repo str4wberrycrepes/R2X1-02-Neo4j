@@ -1,1 +1,1 @@
-create (:person {name:"Dave", iq:"1"}), (:person {name:"Jigs", iq:"1"}), (:person {name:"Philler", iq:"1"}), (:person {name:"Augustine", iq:"1"}), (:person {name:"Jared", iq:"1"})
+create (:person {name:"Dave", iq:1}), (:person {name:"Jigs", iq:1}), (:person {name:"Philler", iq:1}), (:person {name:"Augustine", iq:1}), (:person {name:"Jared", iq:1})
