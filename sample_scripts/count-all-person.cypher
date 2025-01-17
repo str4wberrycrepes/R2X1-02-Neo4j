@@ -1,2 +1,2 @@
-match(n)
+match(n:person)
 return count(n)
