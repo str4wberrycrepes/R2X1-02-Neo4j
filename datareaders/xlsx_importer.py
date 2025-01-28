@@ -1,9 +1,11 @@
+# ephemera
+
 # For importing research paper table into neo4j nodes
 # IMPORTANT - assumes the neo4j database you are pushing into is empty
 
 # import
 from neo4j import GraphDatabase # Neo4j
-import pandas # Pandas (For reading excel frfr no cap)
+import pandas # Pandas
 import json # Config
 
 # Take filepath to excel file
@@ -36,9 +38,6 @@ with GraphDatabase.driver(url, auth=neo4jauth) as driver:
 
     # Add each paper to query
     for i in range(len(data)):
-        # don't fucking worry about it ur NEVER reading this properly loveu heartsies
-        # Stupid ass string concat whoever made this is a MORON (I made it)
-
         # Get research paper data
         paper = data.loc[i]
 
