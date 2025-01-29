@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="ephemera">
+        <meta name="description" content="https://www.youtube.com/watch?v=mJgBOIoGihA">
+        <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuU-niIuHpNfN-1IbAWxq6coly0oogwUxFkQ&s" type="image/x-icon">
+        <link rel="stylesheet" href="../css/main.css" type="text/css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+        
+        <title>R2X1-02</title>
+
+    </head>
+
+    <body>
+        <header>
+            <h1>R2X1-02</h1>
+            <p>Connected?</p> <!--Change whether connected to server or not-->
+        </header>
+
+        <hr>
+
+        <main>
+            <section>
+                <h2>Please enter paper info:</h2>
+                <div>
+                    <figure>
+                        <figcaption>Title: </figcaption>
+                        <textarea name="title" id="title"></textarea>
+                    </figure>
+                    <figure>
+                        <figcaption>Authors: </figcaption>
+                        <textarea name="authors" id="authors"></textarea>
+                    </figure>
+                    <figure>
+                        <figcaption>Research Code: </figcaption>
+                        <textarea name="resCode" id="resCode"></textarea>
+                    </figure>
+                    <figure>
+                        <figcaption>Batch: </figcaption>
+                        <textarea name="batch" id="batch"></textarea>
+                    </figure>
+                    <figure>
+                        <figcaption>Address: </figcaption>
+                        <textarea name="address" id="address"></textarea>
+                    </figure>
+                    <figure>
+                        <figcaption>Keywords: </figcaption>
+                        <div>
+                            <button id="addKeyword">+</button> <!--Add new text area on button press-->
+                        </div>
+                        <textarea name="keywords" id="keywords"></textarea>
+                    </figure>
+                </div>
+            </section>
+
+            <!--Too lazy to style css here-->
+
+            <div id="push">
+                <figure>
+                    <button id="pushButton">PUSH</button> <!--Push to XML-->
+                    <figcaption>Waiting for push...</figcaption>
+                </figure>
+            </div>
+        </main>
+
+        <script src="../scripts/public/button.js"></script>
+        <script src="../scripts/public/push.js"></script>
+    </body>
+</html>
