@@ -1,3 +1,3 @@
 conf.json
-sampledb.xml
+src/server/xml/sampledb.xml
 src/server/node_modules

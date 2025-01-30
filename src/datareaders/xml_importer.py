@@ -45,7 +45,7 @@ dataframe = pd.DataFrame(rawData)
 
 # Open config file
 print("opening config...")
-with open('./conf.json', 'r') as file:
+with open('../../conf.json', 'r') as file:
     conf = json.load(file)
 
 # Initialize Neo4j login parameters
