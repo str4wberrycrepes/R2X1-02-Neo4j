@@ -59,7 +59,7 @@ function addButton() {
 
 async function attemptConnection() {
     try {
-        const response = await fetch("http://localhost:5000/api/message");
+        const response = await fetch("http://18.136.103.218:5000/api/message");
         const data = await response.json();
 
         console.log("connected to server.");
@@ -76,7 +76,7 @@ async function attemptConnection() {
 
 async function sendData(msg) {
     try {
-        const response = await fetch("http://localhost:5000/api/data", {
+        const response = await fetch("http://18.136.103.218:5000/api/data", {
             method: "POST", // Send data using POST
             headers: {
                 "Content-Type": "application/json"

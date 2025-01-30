@@ -7,7 +7,7 @@ const fs = require("fs");
 const xml2js = require("xml2js");
 
 // variables
-const xmlFilePath = "../../../../sampledb.xml"
+const xmlFilePath = "./xml/sampledb.xml"
 
 const app = express();
 app.use(cors()); //enable cross origin
