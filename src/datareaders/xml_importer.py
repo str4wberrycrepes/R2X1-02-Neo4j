@@ -20,10 +20,11 @@ rawData = []
 
 # Go through each "paper" node in the tree
 for paper in root.findall("paper"):
-    name = paper.find("name").text
-    batch = paper.find("batch").text
-    address = paper.find("address").text
-    authors = paper.find("authors").text
+    print(paper.attrib)
+    name = paper.attrib["title"]
+    batch = paper.attrib["batch"]
+    address = paper.attrib["address"]
+    authors = paper.attrib["authors"]
     keywords = paper.findall("keyword")
     keywords_ = []
 
