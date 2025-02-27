@@ -20,7 +20,6 @@ rawData = []
 
 # Go through each "paper" node in the tree
 for paper in root.findall("paper"):
-    print(paper.attrib)
     name = paper.attrib["title"]
     batch = paper.attrib["batch"]
     address = paper.attrib["address"]
@@ -99,7 +98,7 @@ with GraphDatabase.driver(url, auth=neo4jauth) as driver:
 
         # Check each keyword if in the master keywords list, if not, add it.
         for j in keywords_:
-            if j not in keywords:
+            if j not in keywords and j is not None:
                 keywords.append(j)
 
     # create keyword nodes

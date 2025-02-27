@@ -36,14 +36,15 @@ with GraphDatabase.driver(url, auth=neo4jauth) as driver:
     # Begin query
     query = "CREATE"
 
+    print(data)
+
     # Add each paper to query
     for i in range(len(data)):
         # Get research paper data
         paper = data.loc[i]
 
         # Add to query
-        query += ' (:paper {name:"' + str(paper.title) + '", authors:"' + str(paper.authors) + '", batch:"' + str(paper.batch) + '", address:"' + str(paper.address) +'"}),'
-
+        query += ' (:paper {name:"' + str(paper.title) + '", rescode:"' + str(paper.batch) + "_" + paper.rescode + '", authors:"' + str(paper.authors) + '", batch:"' + str(paper.batch) + '"}),'
     # Get rid of the trailing comma (intentional)
     query = query[:-1]
 
@@ -72,7 +73,7 @@ with GraphDatabase.driver(url, auth=neo4jauth) as driver:
         # Check each keyword if in the master keywords list, if not, add it.
         for j in keywords_:
             if j not in keywords:
-                keywords.append(j)
+                keywords.append(j) #O(n^2) t.c.
 
     # create keyword nodes
     for i in keywords:
