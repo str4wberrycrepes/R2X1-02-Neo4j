@@ -1,3 +1,5 @@
+# DEPRECATED - NO LONGER USED FOR METHODOLOGY
+
 # ephemera
 # Convert xml to Neo4j Nodes
 # IMPORTANT - assumes the neo4j database you are pushing into is empty

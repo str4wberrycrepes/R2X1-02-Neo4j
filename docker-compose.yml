@@ -1,5 +1,6 @@
 #I hate coding
 #Set to 5.20 since that's the latest ver apoc supports
+name: "magi"
 services:
   melchior:
     image: neo4j:5.20.0
@@ -9,3 +10,11 @@ services:
     ports:
       - "7474:7474"
       - "7687:7687"
+  casper:
+    image: neo4j:5.20.0
+    environment:
+        - NEO4J_AUTH=neo4j/password
+        - NEO4J_PLUGINS=["apoc", "n10s"]
+    ports:
+      - "27474:7474"
+      - "27687:7687"
