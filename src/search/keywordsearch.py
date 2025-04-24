@@ -1,4 +1,27 @@
 # ephemera
+from ..traverse.graph import graph
+
+import sys   
+
+shx = []
+
+def ontsearch(edgesum, n, x, node, traversed):
+    traversed.append(node)
+    children = [x for x in graph_.getNeighbors(node) if x not in traversed]
+    print('\n')
+
+    sv = edgesum/(n*x)
+
+    if children == [] or sv < 0.5:
+        return traversed
+    else:
+        for i in children:
+            edgesum += graph_.getNeighbors(node)[i]
+            n += 1
+            print((node, i, edgesum/(n*x)))
+            ontsearch(edgesum, n, x, i, traversed)
+
+    return traversed
 
 def parseSearchString(searchInput):
     # There are three special cases for searches, "", &&, ||
@@ -33,13 +56,28 @@ def parseSearchString(searchInput):
     return terms
 
 if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print("Usage: python rdf_to_graph.py <rdf_file> [output_image]")
+        print("Example: python rdf_to_graph.py ontology.rdf graph.png")
+        sys.exit(1)
+    
+    rdf_file = sys.argv[1]
+    output_file = sys.argv[2] if len(sys.argv) > 2 else "graph_visualization.png"
+    
+    # Parse RDF to graph
+    graph_ = graph.parse_rdf_to_graph(rdf_file)
+    
+    # Print graph information
+    print(f"Graph has {len(graph_.getNodes())} nodes and {len(graph_.getEdges())} edges")
+    print(graph_)
+
     # import
     from neo4j import GraphDatabase # Neo4j
     import json # Config
 
     # Open config file
     print("opening config...")
-    with open('../../conf.json', 'r') as file:
+    with open('./conf.json', 'r') as file:
         conf = json.load(file)
         print("config opened!")
 
@@ -50,6 +88,17 @@ if __name__ == '__main__':
     # Get search query and process it.
     searchIn = input("search:")
     search = parseSearchString(searchIn)
+    ontologySearch = []
+
+    print(parseSearchString)
+
+    for i in search["searchTerms"]:
+        for j in i:
+            print(j)
+            res_ = ontsearch(1, 1, 0.1, i, [])
+            for r in res_:
+                if r not in ontologySearch:
+                    ontologySearch.append(r)
 
     searchRes = []
 
