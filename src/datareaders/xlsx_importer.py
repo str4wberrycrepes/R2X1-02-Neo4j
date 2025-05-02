@@ -44,7 +44,7 @@ with GraphDatabase.driver(url, auth=neo4jauth) as driver:
         paper = data.loc[i]
 
         # Add to query
-        query += ' (:paper {name:"' + str(paper.title) + '", rescode:"' + str(paper.batch) + "_" + paper.rescode + '", authors:"' + str(paper.authors) + '", batch:"' + str(paper.batch) + '"}),'
+        query += ' (:paper {name:"' + str(paper.title) + '", rescode:"' + str(paper.batch) + "_" + str(paper.rescode) + '", authors:"' + str(paper.authors) + '", batch:"' + str(paper.batch) + '"}),'
     # Get rid of the trailing comma (intentional)
     query = query[:-1]
 
@@ -68,7 +68,7 @@ with GraphDatabase.driver(url, auth=neo4jauth) as driver:
 
         # Get all keywords from paper and put in list
         keywords_ = []
-        keywords_ = paper.keywords.split(", ")
+        keywords_ = str(paper.keywords).split(", ")
 
         # Check each keyword if in the master keywords list, if not, add it.
         for j in keywords_:
@@ -104,7 +104,7 @@ with GraphDatabase.driver(url, auth=neo4jauth) as driver:
 
             # Get all keywords from paper and put in list
             keywords_ = []
-            keywords_ = paper.keywords.split(", ")
+            keywords_ = str(paper.keywords).split(", ")
 
             # If the paper has the keyword, add its title to the query
             if i in keywords_:

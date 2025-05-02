@@ -1,27 +1,170 @@
 # ephemera
-from ..traverse.graph import graph
+# import
+from ..traverse.graph import graph, node # undirected weighted graph
+import xml.etree.ElementTree as ET
+from collections import defaultdict
+import pandas
 
-import sys   
+import sys  # sys
 
-shx = []
+from neo4j import GraphDatabase # Neo4j
+import json # Config
 
-def ontsearch(edgesum, n, x, node, traversed):
-    traversed.append(node)
-    children = [x for x in graph_.getNeighbors(node) if x not in traversed]
-    print('\n')
-
-    sv = edgesum/(n*x)
-
-    if children == [] or sv < 0.5:
+def ontsearch(edgesum, n, x, startNode, traversed):
+    # Since I like to tweak, get the actual node if what I input is a string.
+    if isinstance(startNode, str):
+        startNode = next((n for n in graph_.getNodes() if n.name == startNode or n.id == startNode), None)
+        if not startNode:
+            return traversed
+    
+    # Check if we've already visited this node
+    if any(n.name == startNode.name for n in traversed):
         return traversed
-    else:
-        for i in children:
-            edgesum += graph_.getNeighbors(node)[i]
-            n += 1
-            print((node, i, edgesum/(n*x)))
-            ontsearch(edgesum, n, x, i, traversed)
-
+    
+    traversed.append(startNode)
+    
+    # Get neighbors that haven't been traversed
+    neighbors = graph_.getNeighbors(startNode)
+    untraversed_neighbors = [
+        n for n in neighbors 
+        if not any(t.name == n.name for t in traversed)
+    ]
+    
+    # Calculate current semantic value
+    sv = edgesum / (n * x) if (n * x) != 0 else 0
+    
+    # Base case - stop if no neighbors or sv too low
+    if not untraversed_neighbors or sv < 0:  # More lenient threshold
+        return traversed
+    
+    # Recursive case
+    for neighbor in untraversed_neighbors:
+        edge_weight = neighbors[neighbor]
+        new_edgesum = edgesum + edge_weight
+        new_n = n + 1
+        
+        # Continue traversal
+        ontsearch(new_edgesum, new_n, x, neighbor, traversed)
+    
     return traversed
+
+def extractClassName(uri):
+    if '#' in uri:
+        return uri.split('#')[-1]
+    else:
+        # For URIs without a fragment identifier, use the last path component
+        parts = uri.strip('/').split('/')
+        return parts[-1]
+
+
+def parse_rdf_to_graph(rdf_file):
+    # Initialize graph
+    g = graph()
+    
+    # Parse RDF file
+    tree = ET.parse(rdf_file)
+    root = tree.getroot()
+    
+    # Define namespaces
+    namespaces = {
+        'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+        'rdfs': 'http://www.w3.org/2000/01/rdf-schema#',
+        'owl': 'http://www.w3.org/2002/07/owl#'
+    }
+    
+    # Find all owl:Class elements
+    classes = root.findall('./owl:Class', namespaces)
+    
+    # Dictionary to store classes and their subclasses
+    class_hierarchy = defaultdict(list)
+    relationship_strengths = {}
+    
+    # Root nodes
+    root_nodes = [
+        "Agriculture",
+        "Biology",
+        "Chemistry",
+        "Computer_Science",
+        "Engineering",
+        "Physics",
+        "Technology"
+    ]
+
+    node_map = {}
+
+    # Add all classes as nodes first
+    for cls in classes:
+        class_about = cls.attrib.get('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about', '')
+        if class_about:
+            node_ = {}
+            class_id = extractClassName(class_about)
+            node_["id"] = class_id
+
+            # Check for name
+            label = cls.find('./rdfs:label', namespaces)
+            if label is None:
+                continue
+            else:
+                label = label.text
+                node_["name"] = label
+
+            # Check for keywordStatus
+            isKeyword = cls.find('./rdfs:comment', namespaces)
+            if isKeyword is not None and isKeyword.text == "KEYWORD":
+                node_["isKeyword"] = True
+            else:
+                node_["isKeyword"] = False
+
+            node_obj = node(node_["name"], node_["id"], node_["isKeyword"])
+            g.addNode(node_obj)
+            node_map[node_["name"]] = node_obj
+            
+            # Check for subClassOf relationship
+            subclasses = cls.findall('./rdfs:subClassOf', namespaces)
+            for subclass_of in subclasses:
+                parent_resource = subclass_of.attrib.get('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource', '')
+                if parent_resource:
+                    parent_name = extractClassName(parent_resource)
+                    class_hierarchy[parent_name].append(class_id)
+    
+    # Add all root nodes
+    for root_name in root_nodes:
+        root_node = node(root_name, root_name, False)
+        g.addNode(root_node)
+        node_map[root_name] = root_node
+
+    # Add edges between parent and child classes with weight 1
+    for parent_name, children in class_hierarchy.items():
+        # Find parent node in node_map (either by name or ID)
+        parent_node = None
+        for node_obj in node_map.values():
+            if node_obj.name == parent_name or node_obj.id == parent_name:
+                parent_node = node_obj
+                break
+        
+        if parent_node is not None:
+            for child_name in children:
+                # Find child node in node_map
+                child_node = None
+                for node_obj in node_map.values():
+                    if node_obj.name == child_name or node_obj.id == child_name:
+                        child_node = node_obj
+                        break
+                
+                if child_node is not None:
+                    g.addEdge(parent_node, child_node, 1)  # Add edge with weight 1
+
+    print(g)
+    return g
+    
+    # # Add edges between classes and their subclasses with relationship strengths
+    # for i in range(len(weightData)):
+    #     weight = weightData.loc[i]
+    #     child = node_map[weight.child]
+    #     parent = node_map[weight.parent]
+    #     weightValue = weight.weight
+
+    #     g.addEdge(parent, child, weightValue) 
 
 def parseSearchString(searchInput):
     # There are three special cases for searches, "", &&, ||
@@ -56,24 +199,17 @@ def parseSearchString(searchInput):
     return terms
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print("Usage: python rdf_to_graph.py <rdf_file> [output_image]")
-        print("Example: python rdf_to_graph.py ontology.rdf graph.png")
-        sys.exit(1)
-    
+    # Les try a different type of input (for fun)
     rdf_file = sys.argv[1]
-    output_file = sys.argv[2] if len(sys.argv) > 2 else "graph_visualization.png"
+    log_state = sys.argv[2] if len(sys.argv) > 2 else 0
     
     # Parse RDF to graph
-    graph_ = graph.parse_rdf_to_graph(rdf_file)
+    graph_ = parse_rdf_to_graph(rdf_file)
     
     # Print graph information
-    print(f"Graph has {len(graph_.getNodes())} nodes and {len(graph_.getEdges())} edges")
-    print(graph_)
-
-    # import
-    from neo4j import GraphDatabase # Neo4j
-    import json # Config
+    if log_state != 0:
+        print(f"Graph has {len(graph_.getNodes())} nodes and {len(graph_.getEdges())} edges")
+        print(graph_)
 
     # Open config file
     print("opening config...")
@@ -90,15 +226,25 @@ if __name__ == '__main__':
     search = parseSearchString(searchIn)
     ontologySearch = []
 
-    print(parseSearchString)
+    for search_group in search["searchTerms"]:
+        for search_term in search_group:
+            # Find matching nodes in the graph that contain the search term
+            matching_nodes = [
+                node for node in graph_.getNodes() 
+                if search_term.lower() in node.name.lower() or 
+                search_term.lower() in node.id.lower()
+            ]
+            
+            # Perform ontology search for each matching node
+            for matching_node in matching_nodes:
+                res_ = ontsearch(edgesum=1, n=1, x=10, startNode=matching_node, traversed=[])
+                
+                # Add unique node names to ontologySearch
+                for result_node in res_:
+                    if result_node.name not in ontologySearch:
+                        ontologySearch.append(result_node.name)
 
-    for i in search["searchTerms"]:
-        for j in i:
-            print(j)
-            res_ = ontsearch(1, 1, 0.1, i, [])
-            for r in res_:
-                if r not in ontologySearch:
-                    ontologySearch.append(r)
+    print("keywords found:", ontologySearch)
 
     searchRes = []
 
@@ -111,44 +257,50 @@ if __name__ == '__main__':
             print("\033[91mFATAL: Could not connect to neo4j, perhaps it is offline, or you provided the wrong url.\033[0m")
             exit(0)
         
-        for s_ in search["searchTerms"]:
+        searchRes = []
+        
+        # Use ontologySearch results instead of raw search terms
+        for ontology_term in ontologySearch:
+            print(ontology_term)
             res = []
-            for s in s_:
-                query = 'match(n:keyword)'
-                query += 'where n.name CONTAINS "' + s + '"'
-                query += """
-                match(n) -[m:in]-> (l:paper)
-                return n,m,l
-                """
+            query = """
+            MATCH (n:keyword)
+            WHERE n.name CONTAINS $term OR n.id CONTAINS $term
+            MATCH (n)-[m:in]->(l:paper)
+            RETURN DISTINCT l.name
+            """
+            
+            records, summary, keys = driver.execute_query(
+                query,
+                term=ontology_term,
+                database_="neo4j"
+            )
 
-                records, summary, keys = driver.execute_query(
-                    query,
-                    database_ = "neo4j"
-                )
-
-
-                for r in records:
-                    data = r.data()['l']['rescode']
-                    if data not in res:
-                        res.append(data)
-
+            for r in records:
+                data = r['l.name']
+                if data not in res:
+                    res.append(data)
+            
             searchRes.append(res)
-                    
 
     # Process and return the results based on the operators
-    resultSet = set(searchRes[0])  # We begin the operations with the first set
-
-    for index, s in enumerate(searchRes[1:]):  # We loop through the second set and onwards
-        operator = search["operators"][index]  # Get the operator
+    if not searchRes:  # Handle empty results case
+        resultSet = []
+    else:
+        resultSet = set(searchRes[0])  # Start with first set of results
         
-        # Handle the operations
-        if operator == "&&":
-            resultSet &= set(s)  # Intersection
-        elif operator == "||":
-            resultSet |= set(s)  # Union
+        # Apply operators if we have multiple search terms
+        if len(searchRes) > 1 and 'operators' in search:
+            for index, s in enumerate(searchRes[1:]):
+                operator = search["operators"][index] if index < len(search["operators"]) else "||"
+                
+                if operator == "&&":
+                    resultSet &= set(s)  # Intersection
+                elif operator == "||":
+                    resultSet |= set(s)  # Union
 
     # Sort the results (Alphabetical)
     resultSet = list(resultSet) 
-    resultSet.sort()
 
-    print("Result:", resultSet)  # Bask in glory
+    print("Result:", resultSet)
+    print("Count:", ontologySearch)

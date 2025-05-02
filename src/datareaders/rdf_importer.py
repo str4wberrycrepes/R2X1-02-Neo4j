@@ -95,7 +95,7 @@ def importToNeo4j(data, conf):
 
 if __name__ == "__main__":
     # path to rdf
-    fPath = "C:/Users/davep/Downloads/bismila.rdf"
+    fPath = "C:/Users/davep/Downloads/ont1.rdf"
     
     # parse rdf
     data = parseRdf(fPath)
