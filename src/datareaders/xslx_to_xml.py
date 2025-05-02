@@ -20,14 +20,22 @@ for i in range(len(data)):
     # Get paper data
     paperData = data.loc[i]
 
+    # Safely get values with fallback to empty strings
+    title = str(paperData.title) if pd.notna(paperData.title) else ""
+    batch = str(paperData.batch) if pd.notna(paperData.batch) else ""
+    rescode = str(paperData.rescode) if pd.notna(paperData.rescode) else ""
+    authors_raw = str(paperData.authors) if pd.notna(paperData.authors) else ""
+    advisers_raw = str(paperData.advisers) if pd.notna(paperData.advisers) else ""
+    keywords_raw = str(paperData.keywords) if pd.notna(paperData.keywords) else ""
+
     # Set paper node attribs
     paper = ET.SubElement(root, "paper")
-    paper.set("title", paperData.title)
-    paper.set("rescode", str(paperData.batch) + "_" + paperData.rescode)
+    paper.set("title", title)
+    paper.set("rescode", batch[:-2] + "_" + rescode if len(batch) >= 2 else "_" + rescode)
 
     # Separate authors and advisers
-    authors = paperData.authors.split(", ")
-    advisers = paperData.advisers.split(", ")
+    authors = authors_raw.split(", ") if authors_raw else []
+    advisers = advisers_raw.split(", ") if advisers_raw else []
 
     for a in authors:
         author = ET.SubElement(paper, "author")
@@ -38,7 +46,7 @@ for i in range(len(data)):
         adviser.text = a
 
     # Separate keywords
-    keywords = paperData.keywords.split(", ")
+    keywords = keywords_raw.split(", ") if keywords_raw else []
 
     for k in keywords:
         keyword = ET.SubElement(paper, "keyword")

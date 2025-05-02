@@ -1,0 +1,952 @@
+<?xml version="1.0" ?>
+<data>
+  <paper title="Development of a 3D-printed H-Darrieus Vertical Axis Wind Turbine Blade Inspired by Dragonfly Wings" rescode="2024_R3J1-01">
+    <author>Alfonso A. Albano</author>
+    <author>Miguel Ivan A. Cuales</author>
+    <author>Daniel Carlo B. Abelado</author>
+    <adviser>Elliard Roswell S. Yanza</adviser>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Alejandro Jose A. Tuazon</adviser>
+    <keyword>airfoil</keyword>
+    <keyword>corrugation depth</keyword>
+    <keyword>corrugations</keyword>
+    <keyword>drag</keyword>
+    <keyword>lift</keyword>
+    <keyword>vortices</keyword>
+    <keyword>vertical axis wind turbine</keyword>
+    <keyword>VAWT</keyword>
+    <keyword>3D-printed turbine</keyword>
+    <keyword>3D-model</keyword>
+    <keyword>H-Darrieus</keyword>
+    <keyword>Dragonfly Wings</keyword>
+    <keyword>NACA 0021</keyword>
+    <keyword>FX 63-137</keyword>
+    <keyword>Autodesk Fusion 360</keyword>
+    <keyword>Fused Deposition Modelling 3D-printer</keyword>
+    <keyword>FDM 3D-printer</keyword>
+    <keyword>Polylactic acid</keyword>
+    <keyword>initial fan testing</keyword>
+    <keyword>IFT</keyword>
+    <keyword>biomimicry</keyword>
+  </paper>
+  <paper title="Development of a Benguet Pine (Pinus kesiya) Seed-inspired Horizontal Axis Wind Turbine Blade" rescode="2024_R3J1-02">
+    <author>Noreen Isabelle A. Avanceña</author>
+    <author>Sean O. Magpantay</author>
+    <author>Bert Jacob A. Tropicales,</author>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Alejandro Jose A. Tuazon</adviser>
+    <keyword>horizontal axis wind turbine</keyword>
+    <keyword>HAWT</keyword>
+    <keyword>small scale</keyword>
+    <keyword>auto-gyrating seed</keyword>
+    <keyword>Betz Limit</keyword>
+    <keyword>biomimicry</keyword>
+    <keyword>Optimization</keyword>
+    <keyword>renewable energy</keyword>
+    <keyword>wind energy</keyword>
+    <keyword>Benguet pine</keyword>
+    <keyword>NACA 4412</keyword>
+    <keyword>Fusion 360</keyword>
+    <keyword>ANSYS CFD</keyword>
+    <keyword>3D-printed turbine</keyword>
+    <keyword>3D-model</keyword>
+    <keyword>Jose Vera Santos Memorial Herbarium</keyword>
+    <keyword>lift to drag ratio</keyword>
+    <keyword>LDR</keyword>
+  </paper>
+  <paper title="Noise Reduction Application of Serrated Trailing Edge on H-Darrieus Vertical-Axis Wind Turbines (VAWTs)" rescode="2024_R3J1-03">
+    <author>Axel E. De Ocampo</author>
+    <author>Jose Lorenzo R. Ignacio</author>
+    <author>Ramon Enrique T. Rillera</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Alejandro Jose A. Tuazon</adviser>
+    <keyword>Ansys Fluent</keyword>
+    <keyword>small scale</keyword>
+    <keyword>sinusoidal serrations</keyword>
+    <keyword>modified airfoil</keyword>
+    <keyword>H-Darrieus</keyword>
+    <keyword>vertical axis wind turbine</keyword>
+    <keyword>VAWT</keyword>
+    <keyword>noise reduction</keyword>
+    <keyword>Ffowcs Williams-Hawkings</keyword>
+    <keyword>Fusion 360</keyword>
+    <keyword>3D-model</keyword>
+    <keyword>NACA 0018</keyword>
+    <keyword>turbine simulation</keyword>
+  </paper>
+  <paper title="BaSED: Striped Bass Fish (Morone saxatilis) Skin-inspired Orthotic Exotendon to Rectify Scissor Gait" rescode="2024_R3J1-04">
+    <author>Athena Cleo DG. Ap-apid</author>
+    <author>Paris Miguel U. Bereber</author>
+    <author>Anika Beatrize S. Panopio</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Alejandro Jose A. Tuazon</adviser>
+    <keyword>gait disorders</keyword>
+    <keyword>material science</keyword>
+    <keyword>medical device</keyword>
+    <keyword>orthosis</keyword>
+    <keyword>stratum compactum</keyword>
+    <keyword>biomimicry</keyword>
+    <keyword>striped bass fish</keyword>
+    <keyword>Bass Skin Exotendon Device</keyword>
+    <keyword>foot harness</keyword>
+    <keyword>polyethylene terephthalate</keyword>
+    <keyword>PET</keyword>
+    <keyword>Universal Testing Machine</keyword>
+    <keyword>UTM</keyword>
+    <keyword>biomimicry</keyword>
+  </paper>
+  <paper title="Development of a Micro-Scale Rainwater and Wind Turbine System as an Emergency Power Source" rescode="2024_R3J1-05">
+    <author>Lance Ethan N. Lee</author>
+    <author>Kuji Lorenzo M. Moren</author>
+    <author>Kenneth Samuel O. Tan</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Alejandro Jose A. Tuazon</adviser>
+    <keyword>dual-turbine system</keyword>
+    <keyword>emergency power source</keyword>
+    <keyword>power efficiency</keyword>
+    <keyword>Savonius turbine</keyword>
+    <keyword>Turgo turbine</keyword>
+    <keyword>typhoon</keyword>
+    <keyword>Fusion 360</keyword>
+    <keyword>LTSpice</keyword>
+    <keyword>selection matrix</keyword>
+    <keyword>3D-printed turbine</keyword>
+    <keyword>polylactic acid</keyword>
+    <keyword>PLA</keyword>
+  </paper>
+  <paper title="Development of An Archimedes’ Screw-Based Storm Drain to Prevent Clogging" rescode="2024_R3J1-06">
+    <author>Stephen Remo S. Chua</author>
+    <author>Enrico Miguel N. Salvador</author>
+    <author>Heinrich Elbert E. Yap</author>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Ervin S. Santos</adviser>
+    <keyword>blockage</keyword>
+    <keyword>flood prevention</keyword>
+    <keyword>self-cleaning</keyword>
+    <keyword>water turbine</keyword>
+    <keyword>archimedes screw-based storm drain</keyword>
+    <keyword>polyvinyl chloride pipes</keyword>
+    <keyword>PVC</keyword>
+    <keyword>trench grating</keyword>
+    <keyword>polyethylene terephthalate plastic</keyword>
+    <keyword>PET</keyword>
+  </paper>
+  <paper title="In silico Modification of Kaempferitrin as an Improvement for its Drug Capabilities Against Colorectal Cancer Cyclin-dependent Kinase 2 Protein" rescode="2024_R3J2-01">
+    <author>Sean Ken M. Galanza</author>
+    <author>Bianca Marie G. Sacramento</author>
+    <author>Zsarina C. Timbreza</author>
+    <adviser>Ana Victoria R. Lloren</adviser>
+    <adviser>Elliard Roswell S. Yanza</adviser>
+    <adviser>and Donna Salve C. Hipolito</adviser>
+    <keyword>in silico</keyword>
+    <keyword>drug development</keyword>
+    <keyword>analog compound</keyword>
+    <keyword>binding affinity</keyword>
+    <keyword>colorectal cancer</keyword>
+    <keyword>cyclin-dependent kinase</keyword>
+    <keyword>kaempferitrin</keyword>
+    <keyword>molecular docking</keyword>
+  </paper>
+  <paper title="Development of an Entity-Component-System Based Software to Make Simulations of Numerous Low Earth Orbit Objects" rescode="2024_R3J2-02">
+    <author>Arthur Joshua G. Billedo</author>
+    <author>Marcus Bernard G. Gonzales</author>
+    <author>Eron Benito G. Ocampo</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <adviser>and Gerold C. Pedemonte</adviser>
+    <keyword>entity-component-system</keyword>
+    <keyword>debris</keyword>
+    <keyword>low earth orbit satellite</keyword>
+    <keyword>Unreal Engine</keyword>
+    <keyword>simulation</keyword>
+    <keyword>NORAD number</keyword>
+    <keyword>Simplified General Perturbations model</keyword>
+    <keyword>CPU utilization</keyword>
+    <keyword>GPU utilization</keyword>
+  </paper>
+  <paper title="In silico Graphene Chemical Vapor Deposition for Structural Defects" rescode="2024_R3J2-03">
+    <author>Josh Henrik V. Miranda</author>
+    <author>Janna Franchezka Q. Visitacion</author>
+    <author>Myka Angelyn S. Ylarde</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <adviser>Elliard Roswell S. Yanza</adviser>
+    <keyword>Large-scale Atomic/Molecular Massively Parallel Simulator</keyword>
+    <keyword>AIREBO-M</keyword>
+    <keyword>molecular dynamics</keyword>
+    <keyword>silicon</keyword>
+    <keyword>In silico</keyword>
+    <keyword>graphene chemical vapoer deposition</keyword>
+    <keyword>membered rings</keyword>
+  </paper>
+  <paper title="Development of a Weighted-Scoring Model for Task Prioritization Using Logistic Regression" rescode="2024_R3J2-04">
+    <author>Joshua Miguel D. Mariano</author>
+    <author>Marco Matvey O. Redulla</author>
+    <author>Erwyn Aenas M. Vibal</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <adviser>Mark John V. Ayaay</adviser>
+    <keyword>logistic regression</keyword>
+    <keyword>predictive modeling</keyword>
+    <keyword>student productivity</keyword>
+    <keyword>task prioritization</keyword>
+    <keyword>weighted-scoring model</keyword>
+    <keyword>survey</keyword>
+    <keyword>general weighted average</keyword>
+  </paper>
+  <paper title="Mechanical Properties of Calcium Hydroxide-Treated Corn (Zea mays) Husk Fiber Reinforced Concrete" rescode="2024_R3J2-05">
+    <author>Timothy Lawrence G. Andal</author>
+    <author>Ianne Christa A. Madrid</author>
+    <author>Harold Franz B. Tan Jr.</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <adviser>and Ayn Hazel G. Manuel</adviser>
+    <keyword>calcium hydroxide</keyword>
+    <keyword>corn husk fiber</keyword>
+    <keyword>fiber alkaline treatment</keyword>
+    <keyword>fiber-reinforced concrete</keyword>
+    <keyword>mechanical properties</keyword>
+    <keyword>calcium hydroxide</keyword>
+    <keyword>sodium hydroxide</keyword>
+    <keyword>tensile strength</keyword>
+    <keyword>flexural strength</keyword>
+  </paper>
+  <paper title="Development of an Optical Correcting Attachment for Enhancing Aberrated Telescope Images" rescode="2024_R3J2-06">
+    <author>Reuben Ryan D.V. Anoran</author>
+    <author>Joshua Hernan D. Masangkay</author>
+    <author>Eero Janmarco L. Sta. Rosa</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <adviser>Bernard C. Llaguno</adviser>
+    <adviser>and Jason C. Alcarez</adviser>
+    <keyword>optical correcting attachment</keyword>
+    <keyword>aberrated telescope image</keyword>
+    <keyword>slanted edge test</keyword>
+    <keyword>modulation transfer function</keyword>
+    <keyword>optical correction</keyword>
+    <keyword>Celestron 114EQ Telescope</keyword>
+    <keyword>polyvinyl chloride pipe</keyword>
+    <keyword>3D-printing</keyword>
+  </paper>
+  <paper title="Classification of Early Formation Scenarios of Exoplanetary Gas Giants Using Principal Component Analysis" rescode="2024_R3J2-07">
+    <author>Benjamin L. Jacob</author>
+    <author>Kevin William M. Castro</author>
+    <author>Harold Scott A. Chua</author>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <adviser>Gerold C. Pedemonte</adviser>
+    <keyword>core accretion</keyword>
+    <keyword>disk instability</keyword>
+    <keyword>gas giants</keyword>
+    <keyword>principal component analysis</keyword>
+    <keyword>NASA</keyword>
+    <keyword>semi-major axis</keyword>
+    <keyword>stellar mass</keyword>
+    <keyword>stellar temperature</keyword>
+    <keyword>stellar metallicity</keyword>
+    <keyword>planetary mass</keyword>
+  </paper>
+  <paper title="In silico Screening of 40 Antiviral Phytochemicals as Inhibitors to the Envelope Protein of Dengue Virus Serotype 2 (DENV-2)" rescode="2024_R3K1-01">
+    <author>Katrina Isabelle P. Dela Rama</author>
+    <author>Corel L. Lee</author>
+    <author>Precious Raivel C. Siazon</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Elliard Roswell S. Yanza</adviser>
+    <keyword>active site</keyword>
+    <keyword>amino acids</keyword>
+    <keyword>dengue</keyword>
+    <keyword>hydrogen bonds</keyword>
+    <keyword>hydrophobic interactions</keyword>
+    <keyword>molecular docking</keyword>
+    <keyword>ligand</keyword>
+    <keyword>Lipinski’s Rule of 5</keyword>
+    <keyword>phytochemical</keyword>
+    <keyword>Glabridin</keyword>
+    <keyword>licorice</keyword>
+    <keyword>mosquito</keyword>
+    <keyword>in silico</keyword>
+    <keyword>Glycyrrhizin</keyword>
+    <keyword>Hypericin</keyword>
+    <keyword>a-Ketoamide-11r</keyword>
+    <keyword>Pseudohypericin</keyword>
+    <keyword>Cystoketal</keyword>
+    <keyword>Cyanidin 3-Glucoside</keyword>
+    <keyword>Lopinavir</keyword>
+  </paper>
+  <paper title="Fabrication and Characterization of Saba banana (Musa acuminata x Musa balbisiana) Bast Fiber and Cotton Fiber Fabric-Reinforced Polyethylene-based Composites" rescode="2024_R3K1-03">
+    <author>Sophia Beatriz S. Basas</author>
+    <author>Kimberly C. Daran</author>
+    <author>Reuven Zane D. Yap</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Elliard Roswell S. Yanza</adviser>
+    <keyword>flexural strength</keyword>
+    <keyword>natural fiber</keyword>
+    <keyword>polymers</keyword>
+    <keyword>tensile strength</keyword>
+    <keyword>textile</keyword>
+    <keyword>Saba banana</keyword>
+    <keyword>Musa acuminata</keyword>
+    <keyword>Musa balbisiana</keyword>
+    <keyword>bast fiber</keyword>
+    <keyword>cotton fiber</keyword>
+    <keyword>polyethylene</keyword>
+    <keyword>Philippine Textile Research Institute</keyword>
+    <keyword>PTRI</keyword>
+    <keyword>fabric</keyword>
+    <keyword>compression molding</keyword>
+    <keyword>water absorbency</keyword>
+    <keyword>flexural strength</keyword>
+    <keyword>SEM Imaging</keyword>
+  </paper>
+  <paper title="Effects of Drum Roasting, Hot Air Roasting, and Open-flame Pan Roasting on the Physicochemical Properties of Philippine Robusta Coffee Beans" rescode="2024_R3K1-04">
+    <author>Zsaneah Patriz H. De Veyra</author>
+    <author>Angelo Gabrielle R. Lingal</author>
+    <author>Ramiel Gideon F. Oronce</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Elijah V. Estante</adviser>
+    <keyword>caffeine</keyword>
+    <keyword>chlorogenic acid</keyword>
+    <keyword>moisture content</keyword>
+    <keyword>pH</keyword>
+    <keyword>roasting methods</keyword>
+    <keyword>spectrophotometry</keyword>
+    <keyword>robusta coffee bean</keyword>
+    <keyword>physicochemical properties</keyword>
+    <keyword>drum roasting</keyword>
+    <keyword>hot air roasting</keyword>
+    <keyword>open-flame pan roasting</keyword>
+  </paper>
+  <paper title="Anti-Biofilm Activity of Cananga odorata (Ylang-Ylang) Essential Oils on Pseudomonas aeruginosa and Bacillus subtilis" rescode="2024_R3K2-01">
+    <author>Erin L. Clemente</author>
+    <author>Lauren Vada P. Fernandez</author>
+    <author>Raya Gabrielle L. Herrera</author>
+    <adviser>Elliard Roswell S. Yanza</adviser>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <adviser>Ralph S. Hipolito</adviser>
+    <keyword>anti-biofilm</keyword>
+    <keyword>biofilm inhibition</keyword>
+    <keyword>biofilm formation</keyword>
+    <keyword>Cananga odorata</keyword>
+    <keyword>essential oil</keyword>
+    <keyword>microtiter plate</keyword>
+    <keyword>linalool</keyword>
+    <keyword>Pseudomonas aeruginosa</keyword>
+    <keyword>Bacillus subtilis</keyword>
+    <keyword>bee propolis</keyword>
+    <keyword>microbial growth</keyword>
+    <keyword>spectrophotometry</keyword>
+    <keyword>eagle effect</keyword>
+    <keyword>SPECTROstar Nano microplate reader</keyword>
+    <keyword>GraphPad Prism</keyword>
+  </paper>
+  <paper title="Genetic Biomarkers of Generalized Anxiety Disorder: A Systematic Review" rescode="2024_R3K2-03">
+    <author>Maria Angelina R. Corpuz</author>
+    <author>Therese Carmela V. Hocbo</author>
+    <author>Christian Victor I. Naoe</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <adviser>Elijah V. Estante</adviser>
+    <keyword>anxiety disorder</keyword>
+    <keyword>diagnosis</keyword>
+    <keyword>generalized anxiety disorder</keyword>
+    <keyword>genetic biomarker</keyword>
+    <keyword>manifestation</keyword>
+    <keyword>systematic review</keyword>
+    <keyword>PRISMA guidelines</keyword>
+    <keyword>QuADS tool</keyword>
+    <keyword>Cochrane Library</keyword>
+    <keyword>PubMed</keyword>
+    <keyword>Google Scholar</keyword>
+    <keyword>CADIMA</keyword>
+    <keyword>article searching and screening</keyword>
+    <keyword>genetic polymorphism</keyword>
+    <keyword>gene</keyword>
+    <keyword>allele</keyword>
+    <keyword>genotype</keyword>
+  </paper>
+  <paper title="Functional Properties and Proximate Composition of Lyophilized and Oven-Dried Gelatin Derived From Milkfish (Chanos chanos)" rescode="2024_R3K2-04">
+    <author>Rajoj Uriel M. Shrestha</author>
+    <author>Arkin Julian C. Sanchez</author>
+    <author>Juan Carlos N. Villamonte</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <adviser>Elijah V. Estante</adviser>
+    <keyword>Chanos chanos</keyword>
+    <keyword>Functional Properties</keyword>
+    <keyword>gelatin</keyword>
+    <keyword>Lyophilization</keyword>
+    <keyword>milkfish</keyword>
+    <keyword>Scales</keyword>
+    <keyword>oven-dried</keyword>
+    <keyword>Trabajo Market</keyword>
+    <keyword>De La Salle University</keyword>
+    <keyword>UV-Vis Spectrophotometer</keyword>
+    <keyword>Proximate Composition</keyword>
+    <keyword>PIPAC</keyword>
+    <keyword>Ateneo de Manila University</keyword>
+    <keyword>Kjeldahl procedure</keyword>
+    <keyword>FTIR Spectroscopy Analysis</keyword>
+    <keyword>Philippine Science High School - Main Campus</keyword>
+    <keyword>PSHS-MC</keyword>
+  </paper>
+  <paper title="Evaluation of Different UI Layouts on the Navigational Efficiency of KHub Repository Course Pages" rescode="2024_R3K2-05">
+    <author>Vinci Andre S. Lopez</author>
+    <author>Von Anthony Mari F. Lainez</author>
+    <author>Mariella Cecilia F. Solis</author>
+    <adviser>Roy Vincent Canseco</adviser>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Donna Salve Hipolito</adviser>
+    <keyword>Edwiser RemUI</keyword>
+    <keyword>E-LMS</keyword>
+    <keyword>Layouts</keyword>
+    <keyword>Moodle</keyword>
+    <keyword>Navigational Efficiency</keyword>
+    <keyword>UI</keyword>
+    <keyword>interface</keyword>
+    <keyword> Philippine Science High School - Main Campus</keyword>
+    <keyword>PSHS-MC</keyword>
+    <keyword>Knowledge Hub</keyword>
+    <keyword>KHub</keyword>
+    <keyword>PSHS</keyword>
+  </paper>
+  <paper title="Antibacterial and Cytotoxic Properties of Tagbak-babae (Alpinia haenkei) and Siamese ginger (Alpinia galanga) Crude Leaf Extracts" rescode="2024_R3K2-06">
+    <author>Mary Kristielle O. Guanzon</author>
+    <author>Angeline Noelle S. Lim</author>
+    <author>Isabella Victoria Luz D. Lim</author>
+    <adviser>Elliard Roswell S. Yanza</adviser>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <keyword>antibiotic resistance</keyword>
+    <keyword>cytotoxic property</keyword>
+    <keyword>crude leaf extract</keyword>
+    <keyword>ESKAPE pathogens,</keyword>
+  </paper>
+  <paper title="" rescode="_">
+    <keyword>Siamese ginger</keyword>
+    <keyword>Tagbak-babae</keyword>
+    <keyword>Staphylococcus aureus</keyword>
+    <keyword>Pseudomonas aeruginosa</keyword>
+    <keyword>Soxhlet extraction</keyword>
+    <keyword>Kirby-Bauer Disk Diffusion</keyword>
+    <keyword>Broth Microdilution</keyword>
+    <keyword>getamicin</keyword>
+    <keyword>clindamycin</keyword>
+    <keyword> University of The Philippines Diliman</keyword>
+    <keyword>UP Diliman</keyword>
+    <keyword>MTT assay</keyword>
+    <keyword/>
+  </paper>
+  <paper title="In Silico Investigation of Cyclosporine Conjugates as Potential Anti-Angiogenic Agents via NFAT Inhibition" rescode="2024_R3M1-01">
+    <author>Roanne Frances T. Anteza</author>
+    <author>Julianne Marie G. Barin</author>
+    <author>Misha Anne R. Lumibao</author>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Ana Victoria R. Lloren</adviser>
+    <adviser>Elliard Roswell S. Yanza</adviser>
+    <keyword>angiogenesis</keyword>
+    <keyword>calcineurin</keyword>
+    <keyword>chemotherapy</keyword>
+    <keyword>drug development</keyword>
+    <keyword>pharmacokinetics</keyword>
+    <keyword>molecular docking</keyword>
+    <keyword>Cyclosporine-A</keyword>
+    <keyword>voclosporin</keyword>
+    <keyword>bioavailability</keyword>
+    <keyword>in silico</keyword>
+    <keyword>Cyclosporine conjugate</keyword>
+    <keyword>NFAT inhibition</keyword>
+    <keyword>ligand</keyword>
+    <keyword>Lipinski’s Rule of 5</keyword>
+    <keyword>binding affinity</keyword>
+  </paper>
+  <paper title="Detection of Mosquitoes through the Construction of a Device that Processes Wingbeat Frequencies using Convolutional Neural Networks" rescode="2024_R3M1-03">
+    <author>Carlos Jose S. Castillo</author>
+    <author>Mikaela S. Dizon</author>
+    <author>Lady Ale Sandra S. Fajardo</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Adrian A. Angeles</adviser>
+    <adviser>Jason C. Alcarez</adviser>
+    <keyword>Arduino</keyword>
+    <keyword>embedded systems</keyword>
+    <keyword>machine learning</keyword>
+    <keyword>pest control</keyword>
+    <keyword>CNN</keyword>
+    <keyword>convolutional neural network</keyword>
+    <keyword>mosquito wingbeat frequencies</keyword>
+  </paper>
+  <paper title="Evaluation of Tensile Strength and Water Absorption in Abaca Fiber-Reinforced Recycled High-Density Polyethylene Composite" rescode="2024_R3M1-04">
+    <author>Gef Eigen S. Lim</author>
+    <author>Carl Andrew C. Valois</author>
+    <author>John Daniel R. Dela Cruz</author>
+    <adviser>Ana Victoria R. Lloren</adviser>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Lourdes Patricia C. Mateo</adviser>
+    <adviser>Alejandro Jose A. Tuazon</adviser>
+    <adviser>Catherine Joy M. Dela Cruz</adviser>
+    <keyword>recycled high-density polyethylene</keyword>
+    <keyword>natural fiber</keyword>
+    <keyword>mechanical properties</keyword>
+    <keyword>characterization</keyword>
+    <keyword>recycled plastics</keyword>
+    <keyword>polymers</keyword>
+    <keyword>tensile strength</keyword>
+    <keyword>Abaca fiber</keyword>
+    <keyword>Fourier Transform Infrared</keyword>
+    <keyword>SEM imaging</keyword>
+    <keyword>water repellency</keyword>
+    <keyword>water absorbtion</keyword>
+  </paper>
+  <paper title="Assessment of Physicochemical Properties and Coliform Load of the Tap Water" rescode="2024_R3M1-05">
+    <author>Paula Bettina R. Domingo</author>
+    <author>Svesda Marie L. Simangan</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Arianne A. Won</adviser>
+    <keyword>potability</keyword>
+    <keyword>rain</keyword>
+    <keyword>Readycult</keyword>
+    <keyword>water content</keyword>
+    <keyword>water quality</keyword>
+    <keyword>YSI meter</keyword>
+    <keyword>coliform</keyword>
+    <keyword>Escherichia coli</keyword>
+    <keyword>PSHS-MC</keyword>
+    <keyword>Philippine Science High School</keyword>
+    <keyword>pH level</keyword>
+    <keyword>conductivity</keyword>
+    <keyword>dissolved solids</keyword>
+  </paper>
+  <paper title="and Collected Rainwater in Philippine Science High School—Main Campus" rescode="_"/>
+  <paper title="The Potential of Calcium Carbonate in Manila Clam (Venerupis philippinarum) Shells as an Acrylic Paint Extender Pigment" rescode="2024_R3M1-06">
+    <author>Kirk Ryle G. Distajo</author>
+    <author>Zoriel C. Maguddayao</author>
+    <author>Kurt Chester T. Nuqui</author>
+    <adviser>Elliard Roswell S. Yanza,</adviser>
+    <keyword>acrylic paint</keyword>
+    <keyword>calcium carbonate</keyword>
+    <keyword>extender pigment</keyword>
+    <keyword>Manila clam shell</keyword>
+    <keyword>Venerupis philippinarum</keyword>
+  </paper>
+  <paper title="" rescode="_">
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Lourdes Patricia C. Mateo</adviser>
+    <adviser>Catherine Joy M. Dela Cruz</adviser>
+  </paper>
+  <paper title="In-silico Identification and Evaluation of the Physicochemical Properties of Potential Antimicrobial Peptides in Gumamela (Hibiscus rosa-sinensis) Leaves" rescode="2024_R3M2-01">
+    <author>Ysabel Denise F. Austria</author>
+    <author>Michelle P. Longno</author>
+    <author>Kelly Raizel R. Magcalas</author>
+    <adviser>Ana Victoria R. Lloren</adviser>
+    <adviser>Donna Salve P. Hipolito</adviser>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <keyword>antibiotic development</keyword>
+    <keyword>antimicrobial activity</keyword>
+    <keyword>protein sequences</keyword>
+    <keyword>bioinformatics</keyword>
+    <keyword>machine learning</keyword>
+    <keyword>proteolytic enzyme</keyword>
+    <keyword>antimicrobial peptide</keyword>
+    <keyword>gumamela leaf</keyword>
+    <keyword>in silico</keyword>
+    <keyword>CAMP database</keyword>
+    <keyword>CellPPD Calculator</keyword>
+    <keyword>proteinase K</keyword>
+    <keyword>trypsin</keyword>
+    <keyword>pepsin 1.3</keyword>
+    <keyword>pepsin 2</keyword>
+  </paper>
+  <paper title="Development of a Biodegradable Plastic From Pineapple (Ananas comosus) Stem Starch" rescode="2024_R3M2-02">
+    <author>Francesca Marie M. Ramirez</author>
+    <author>Zachary Jonathan B. Silanga</author>
+    <author>Jason Angelo T. Zafra</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <adviser>Elliard Roswell S. Yanza</adviser>
+    <adviser>Ayn Hazel G. Manuel</adviser>
+    <keyword>biodegradable</keyword>
+    <keyword>bioplastic</keyword>
+    <keyword>pineapple stem</keyword>
+    <keyword>starch</keyword>
+    <keyword>starch-based plastic</keyword>
+    <keyword>cassava starch based-plastics</keyword>
+    <keyword>high density polyethylene</keyword>
+    <keyword>FTIR Spectroscopy Machine</keyword>
+  </paper>
+  <paper title="Effects of Combining Spent Coffee Ground Biochar with Inorganic Fertilizer on Soil pH and Selected Nutrients" rescode="2024_R3M2-03">
+    <author>Bianca Isabel A. Caniedo</author>
+    <author>Sachiko A. Delfin</author>
+    <author>Sean Daniel S. Sibal,</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <keyword>biochar</keyword>
+    <keyword>complete inorganic fertilizer</keyword>
+    <keyword>pH</keyword>
+    <keyword>pyrolysis</keyword>
+    <keyword>spent coffee grounds</keyword>
+    <keyword>Bioavailable Zinc</keyword>
+    <keyword>plant growth</keyword>
+    <keyword>nutrient amendment</keyword>
+    <keyword>Philippine Science High School - Main Campus</keyword>
+    <keyword>PSHS-MC</keyword>
+    <keyword>arabica coffee bean</keyword>
+    <keyword>silty loam soil</keyword>
+    <keyword>Philippine Coconut Authority</keyword>
+    <keyword>organic carbon</keyword>
+    <keyword>total nitrogen</keyword>
+  </paper>
+  <paper title="Effects of Cocoa Pod Flour on the Proximate Composition, Cooking Properties, and Sensorial Properties of Rice Noodles" rescode="2024_R3M2-06">
+    <author>Mistral Joaquin Haravata</author>
+    <author>Awhyn Chjervall Nobora</author>
+    <author>Kimi Dominick Pimentel</author>
+    <adviser>Rose Mary Butaran</adviser>
+    <adviser>Donna Salve Hipolito</adviser>
+    <adviser>Elijah Estante</adviser>
+    <keyword>cocoa pod husk</keyword>
+    <keyword>rice noodle</keyword>
+    <keyword>by-product</keyword>
+    <keyword>cooking properties</keyword>
+    <keyword>proximate composition</keyword>
+    <keyword>sensory evaluation</keyword>
+    <keyword>Blessed Harvest Marketing</keyword>
+    <keyword>traditional rice noodle recipe by Judy</keyword>
+    <keyword>breaking rate</keyword>
+    <keyword>rehydration rate</keyword>
+    <keyword>cooking loss rate</keyword>
+    <keyword>standard official AOAC methods</keyword>
+    <keyword>DOST-FNRI</keyword>
+  </paper>
+  <paper title="Development of an H-Darrieus Vertical Axis Wind Turbine (VAWT) with Sailfish-inspired Blades" rescode="2024_R3X1-01">
+    <author>Alex Anthony L. Andal</author>
+    <author>Martin Gabriel M. Lopez</author>
+    <author>Salvador D. Recio</author>
+    <adviser>Ana Victoria R. Lloren</adviser>
+    <adviser>Catherine Joy M. Dela Cruz</adviser>
+    <adviser>Alejandro Jose A. Tuazon</adviser>
+    <keyword>wind energy</keyword>
+    <keyword>vertical axis wind turbine</keyword>
+    <keyword>VAWT</keyword>
+    <keyword>airfoil</keyword>
+    <keyword>coefficient of lift</keyword>
+    <keyword>power coefficient</keyword>
+    <keyword>NACA 0018</keyword>
+    <keyword>3D-printed turbine</keyword>
+    <keyword>3D-model</keyword>
+    <keyword>biomimicry</keyword>
+  </paper>
+  <paper title="Development of a Small-Scale Archimedean Screw Turbine Hydropower Generator in a House Rain Gutter and Spout System" rescode="2024_R3X1-02">
+    <author>John Gabriel P. Ibo</author>
+    <author>Brent Cedric L. Peña</author>
+    <author>Jullian Martin L. Santos</author>
+    <adviser>Elliard Roswell S. Yanza</adviser>
+    <adviser>Catherine Joy M. Dela Cruz</adviser>
+    <adviser>Alejandro Jose A. Tuazon</adviser>
+    <adviser>Jason C. Alcarez</adviser>
+    <keyword>archimedean screw turbine</keyword>
+    <keyword>small scale electric generator</keyword>
+    <keyword>alternative self-sufficient power source</keyword>
+    <keyword>flow rate</keyword>
+    <keyword>power outages</keyword>
+    <keyword>rain gutter</keyword>
+    <keyword>spout system</keyword>
+    <keyword>3D printed turbine</keyword>
+  </paper>
+  <paper title="In Silico Modeling of Amiloride Derivatives as Inhibitors of Cytochrome bd oxidase in Mycobacterium tuberculosis" rescode="2024_R3X2-01">
+    <author>Mark Ruwen A. De Guzman</author>
+    <author>Aliyah Caresse D. Diocera</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Elliard Roswell S. Yanza</adviser>
+    <keyword>modeling of amiloride derivatives</keyword>
+    <keyword>Cytochrome bd oxidase</keyword>
+    <keyword>Mycobacterium tuberculosis</keyword>
+    <keyword>Inhibitors of Cytochrome bd oxidase</keyword>
+    <keyword>drug-resistant tuberculosis</keyword>
+    <keyword>HM2-16F</keyword>
+    <keyword>in vitro</keyword>
+    <keyword>amiloride derivatives</keyword>
+    <keyword>binding affinity</keyword>
+    <keyword>molecular docking</keyword>
+    <keyword>tuberculosis</keyword>
+    <keyword>menaquinone-9 binding site</keyword>
+    <keyword>Lipinski’s Rule of 5</keyword>
+    <keyword>ND-011992</keyword>
+    <keyword>Telacebec</keyword>
+    <keyword>pi-stacking interactions</keyword>
+    <keyword>hydrophobic interactions</keyword>
+    <keyword>pyrazinamide</keyword>
+    <keyword>in silico</keyword>
+    <keyword>drug development</keyword>
+  </paper>
+  <paper title="The Effects of Indigenous Microorganisms (IMO) and Wood Ash to the Physico-chemical Properties of Chicken Manure" rescode="2024_R3X2-03">
+    <author>Stephanie Claire S. Enaje</author>
+    <author>Andrea Margarette Y. Ganancial</author>
+    <author>Rían Althea D. San Miguel</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Rieziel Ann D. Bernal</adviser>
+    <keyword>chicken manure</keyword>
+    <keyword>indigenous microorganism</keyword>
+    <keyword>poultry farm</keyword>
+    <keyword>wood ash</keyword>
+    <keyword>fly infestation</keyword>
+    <keyword>indigenous microorganism</keyword>
+    <keyword>Musca domestica</keyword>
+    <keyword>permethrin</keyword>
+  </paper>
+  <paper title="Testing the Antimicrobial and Physicochemical Properties of Ampalaya (Momordica charantia L.) Seed Oil-based Cream" rescode="2024_R3X2-04">
+    <author>Jarvey Meejel C. London</author>
+    <author>Jude Bryan M. Gonzales</author>
+    <author>Luc G. Lozada</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Melanie Anne B. Cheng</adviser>
+    <keyword>cream formulation</keyword>
+    <keyword>antimicrobial testing</keyword>
+    <keyword>physicochemical testing</keyword>
+    <keyword>ampalaya seed</keyword>
+    <keyword>ampalaya</keyword>
+    <keyword>ampalaya seed oil-based cream</keyword>
+    <keyword>Soxhlet extraction</keyword>
+    <keyword>Kirby-Bauer disk diffusion</keyword>
+    <keyword>Staphylococcus aureus</keyword>
+    <keyword>Pseudomonas aeruginosa</keyword>
+    <keyword>antimicrobial inhibition</keyword>
+    <keyword>Free Fatty Acids</keyword>
+  </paper>
+  <paper title="Antifungal Activity of Lagundi (Vitex negundo) Root Extract on Fusarium oxysporum" rescode="2024_R3X2-05">
+    <author>Ethan Anilov T. Norcio</author>
+    <author>Kathleen Gabrielle C. Penullar</author>
+    <author>Mico Xander DC. Rubico</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Aileen C. Dela Cruz</adviser>
+    <adviser>Sofia M. Docto</adviser>
+    <keyword>difenoconazole</keyword>
+    <keyword>Flavonoid</keyword>
+    <keyword>inhibition zone</keyword>
+    <keyword>Panama disease</keyword>
+    <keyword>well diffusion</keyword>
+    <keyword>lagundi</keyword>
+    <keyword>Fusarium oxysporum</keyword>
+    <keyword>Fusarium wilt</keyword>
+    <keyword>antifungal</keyword>
+    <keyword>Vitex negundo root extract</keyword>
+    <keyword>difenoconazole</keyword>
+    <keyword>Ascomycetes</keyword>
+  </paper>
+  <paper title="" rescode="_">
+    <keyword>fungus</keyword>
+    <keyword>Fusarium oxysporum f. sp. cubense</keyword>
+    <keyword>fungicide</keyword>
+  </paper>
+  <paper title="In Silico Analysis of 23 Anti-Inflammatory Phytochemicals of Psidium guajava Against Cyclooxygenase-2 and 5-Lipoxygenase" rescode="2024_R3X2-07">
+    <author>Bianca Loraine C. Bueno</author>
+    <author>Ramon Mizhael C. Pineda</author>
+    <author>Luch Marcus Mikhail T. Tolin</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Elliard Roswell S. Yanza</adviser>
+    <keyword>COX-1</keyword>
+    <keyword>COX-2</keyword>
+    <keyword>5-LOX</keyword>
+    <keyword>phytochemical</keyword>
+    <keyword>chlorogenic acidchronic inflammatory diseases</keyword>
+    <keyword>guava</keyword>
+    <keyword>molecular docking</keyword>
+    <keyword>nonsteroidal anti-inflammatory drugs</keyword>
+    <keyword>oxygenase</keyword>
+    <keyword>NSAID</keyword>
+    <keyword>molecular docking</keyword>
+    <keyword>in silico</keyword>
+    <keyword>drug development</keyword>
+  </paper>
+  <paper title="Analysis of the Effects of Community Quarantine Policies on Traffic Accidents in Quezon City" rescode="2024_R3Y2-01">
+    <author>Szean Amare M. Aumentado</author>
+    <author>Manuel Edric D. Natividad</author>
+    <author>Renzel M. Villarin</author>
+    <adviser>Adrian A. Angeles</adviser>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <keyword>DOH Data Drop</keyword>
+    <keyword>DRIVER system</keyword>
+    <keyword>interrupted time series analysis</keyword>
+    <keyword>Quezon City</keyword>
+    <keyword>seven-day moving average</keyword>
+    <keyword>COVID-19</keyword>
+    <keyword>Traffic Accident</keyword>
+  </paper>
+  <paper title="An Analysis of Microplastic Occurrence in Water Bodies behind the Advanced" rescode="2024_R3Y2-02">
+    <author>Ivan Marwin L. Bautista</author>
+    <author>Michaela Marie R. Mudlong</author>
+    <author>Ken Khyzer Isaac L. Tan</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Arianne A. Won</adviser>
+    <keyword>ATR-FTIR spectroscopy</keyword>
+    <keyword>freshwater</keyword>
+    <keyword>microplastics</keyword>
+    <keyword>pollution</keyword>
+    <keyword>PSHS</keyword>
+    <keyword>Philippine Science High School</keyword>
+    <keyword>marine ecosystem</keyword>
+    <keyword>Fourier transform infrared</keyword>
+  </paper>
+  <paper title="Science and Technology Building (ASTB) of PSHS Main Campus" rescode="_"/>
+  <paper title="Isolation and Identification of Potential Polyethylene-Degrading Aquatic Bacteria from Las Piñas-Parañaque Wetland Park (LPPWP)" rescode="2004_R3Y2-04">
+    <author>Lily Anne P. Celestino</author>
+    <author>Armea Helena Sien G. Dimayacyac</author>
+    <author>Janna Faye Therese V. Gocatek,</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <keyword>biodegradation</keyword>
+    <keyword>low density polyethylene</keyword>
+    <keyword>Las Piñas-Parañaque Wetland Park</keyword>
+    <keyword>Manila Bay</keyword>
+    <keyword>screening</keyword>
+    <keyword>polyethylene-degrading aquatic bacteria</keyword>
+    <keyword>16S rRNA sequencing</keyword>
+    <keyword>Achromobacter xylosoxidans</keyword>
+    <keyword>Luteimonas tolerans</keyword>
+    <keyword>SEM Imaging</keyword>
+    <keyword>Paracoccus yeei</keyword>
+    <keyword>Fourier Transform Infrared</keyword>
+  </paper>
+  <paper title="Development of a Modified Solar Disinfection System Using Parabolic Reflectors" rescode="2024_R3Y2-05">
+    <author>John Eilmer C. Delos Reyes</author>
+    <author>Ea Sareena P. Evidente</author>
+    <author>Althea Grace E. Tinaan</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Justin Ray M. Guce</adviser>
+    <adviser>Adrian Augusto M. Sumalde</adviser>
+    <adviser>Gerold C. Pedemonte</adviser>
+    <keyword>SODIS</keyword>
+    <keyword>parabolic reflector</keyword>
+    <keyword>solar disinfection</keyword>
+    <keyword>water disinfection</keyword>
+    <keyword>modification of SODIS</keyword>
+  </paper>
+  <paper title="Effect of Heat and Liquid Media Exposure on the Tensile Strength of 3D-Printed PETG" rescode="2024_R3Y2-06">
+    <author>Samantha Antonette A. Mateo</author>
+    <author>Joanne Marie D. Mauricio</author>
+    <author>Leo Everest N. Tapia</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Catherine Joy M. Dela Cruz</adviser>
+    <keyword>3D-printing</keyword>
+    <keyword>food packaging</keyword>
+    <keyword>heat exposure</keyword>
+    <keyword>liquid media exposure</keyword>
+    <keyword>PETG</keyword>
+    <keyword>tensile strength</keyword>
+    <keyword>polyethylene terepthalate glycol</keyword>
+  </paper>
+  <paper title="Development of a Web Interface That Teaches Complex Numbers to PSHS-MC Grade 8 Students" rescode="2024_R3Y2-08">
+    <author>Jence Enrico P. Dela Fuente</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Adrian A. Angeles</adviser>
+    <keyword>complex numbers</keyword>
+    <keyword>mathematics education</keyword>
+    <keyword>learning modules</keyword>
+    <keyword>PSHS-MC</keyword>
+    <keyword>Philippine Science High School</keyword>
+    <keyword>web-based learning</keyword>
+    <keyword>web interface</keyword>
+    <keyword>reliability coefficent</keyword>
+  </paper>
+  <paper title="The Creation of a Catalog of Hot Jupiters: Determining a Dominant Hot Jupiter Origin Theory through the Roche Limit" rescode="2024_R3Z2-01">
+    <author>Patrick Gabriel L. Abeleda</author>
+    <author>Nicci Adrienne B. Tud</author>
+    <adviser>Elliard Roswell S. Yanza</adviser>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Lieza M. Crisostomo</adviser>
+    <adviser>Mark John V. Ayaay</adviser>
+    <keyword>empirical analysis</keyword>
+    <keyword>hot Jupiters</keyword>
+    <keyword>planetary formation</keyword>
+    <keyword>Roche limit</keyword>
+    <keyword>situ formation</keyword>
+    <keyword>disk migration</keyword>
+    <keyword>high eccentricity tidal migration</keyword>
+    <keyword>semi-major axis</keyword>
+    <keyword>NASA</keyword>
+    <keyword>51 Pegasi b</keyword>
+    <keyword>HD 189733</keyword>
+    <keyword>HD 209458b</keyword>
+    <keyword>WASP 12b</keyword>
+    <keyword>WASP 22b</keyword>
+    <keyword>Roche Limit ratio </keyword>
+    <keyword>Dominant Hot Jupiter Origin Theory</keyword>
+  </paper>
+  <paper title="Improved Notification System: Development of a Browser Extension to Compile School Announcements" rescode="2024_R3Z2-03">
+    <author>Dimitri L. Calo</author>
+    <author>Dieux Benisse G. Llanza</author>
+    <author>Rojiver Luke T. Pamerol</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Adrian A. Angeles</adviser>
+    <keyword>PSHS announcement systems</keyword>
+    <keyword>browser extension</keyword>
+    <keyword>Google API</keyword>
+    <keyword>Manifest V3</keyword>
+    <keyword>notification system</keyword>
+    <keyword>HTML</keyword>
+    <keyword>CSS</keyword>
+    <keyword>Javascript</keyword>
+    <keyword>JQuery</keyword>
+    <keyword>KHub</keyword>
+    <keyword>GClass</keyword>
+    <keyword>PSHS</keyword>
+    <keyword>system usability scale</keyword>
+    <keyword>Pisay Direct</keyword>
+    <keyword>web scraping</keyword>
+  </paper>
+  <paper title="Isolation and Identification of Potential Plastic-Degrading Bacteria from Mangrove Sediments in the Las Piñas-Parañaque Wetland Park (LPPWP)" rescode="2024_R3Z2-04">
+    <author>Thomas Uriel S. Clamor</author>
+    <author>Raine Saiya P. Delos Reyes</author>
+    <author>Sofia N. Fabula</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Donna Salve C. Hipolito</adviser>
+    <keyword>biodegradation</keyword>
+    <keyword>mangrove</keyword>
+    <keyword>mangrove sediment</keyword>
+    <keyword>plastic</keyword>
+    <keyword>plastic-degrading bacteria</keyword>
+    <keyword>polyethylene</keyword>
+    <keyword>Las Piñas-Parañaque Wetland Park</keyword>
+    <keyword>mineral salt media</keyword>
+    <keyword>agar</keyword>
+    <keyword>16S rRNA sequencing</keyword>
+  </paper>
+  <paper title="Fabrication of Modified Asymmetric Hygroscopic Structures Based on Moisture-Driven Electricity Generation" rescode="2024_R3Z2-06">
+    <author>Sophia Pauline G. Dela Rosa</author>
+    <author>Ralph Justin A. Maliwat</author>
+    <adviser>Rose Mary B. Butaran</adviser>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Lourdes Patricia C. Mateo</adviser>
+    <adviser>Jason  C. Alcarez</adviser>
+    <adviser>Catherine Joy Dela Cruz</adviser>
+    <keyword>graphite</keyword>
+    <keyword>geometry optimization</keyword>
+    <keyword>renewable energy</keyword>
+    <keyword>sustainability</keyword>
+    <keyword>moisture driven electricity generation</keyword>
+    <keyword>asymmetric hygroscopic structure</keyword>
+    <keyword>salt hydrogel</keyword>
+  </paper>
+  <paper title="Investigating the Potential of Staphylococcus epidermidis for Bioremediation of Organophosphate Selecron Pesticide" rescode="2024_R3Z2-07">
+    <author>Mikhael M. Cornejo</author>
+    <author>Jose Mari M. Galorpo</author>
+    <author>Trevor Ethan S. Lau</author>
+    <adviser>Neil Edsel C. Ramirez</adviser>
+    <adviser>Ralph S. Hipolito</adviser>
+    <keyword>bioremediation</keyword>
+    <keyword>organophosphate</keyword>
+    <keyword>pesticide</keyword>
+    <keyword>profenofo</keyword>
+    <keyword>Staphylococcus epidermidis</keyword>
+    <keyword>spectrophotometry</keyword>
+    <keyword>High-Perfromance Liquid Chromatogrpahy</keyword>
+    <keyword>ligninolytic bacteria</keyword>
+    <keyword>nutrient broth</keyword>
+  </paper>
+</data>
