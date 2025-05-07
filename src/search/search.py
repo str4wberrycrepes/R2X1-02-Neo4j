@@ -14,6 +14,7 @@ from ..traverse.graph import graph, node # undirected weighted graph
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 import pandas
+import csv
 
 from symspellpy.symspellpy import SymSpell, Verbosity # spell checking
 
@@ -22,7 +23,7 @@ import sys  # sys
 from neo4j import GraphDatabase # Neo4j
 import json # Config
 
-def graphSearch(ontGraph, edgeSummation, nodeCount, decayFactor, currentNode, traversed, subclassEdges, penalty=0.95):
+def graphSearch(ontGraph, edgeSummation, nodeCount, decayFactor, currentNode, traversed, subclassEdges, penalty=0.95, svThreshold=0.83):
     # Since I like to tweak, get the actual node if what I input is a string.
     # For reals, we do this so we can just run graphSearch using a node's name or id
     if isinstance(currentNode, str):
@@ -49,7 +50,7 @@ def graphSearch(ontGraph, edgeSummation, nodeCount, decayFactor, currentNode, tr
     # print(f"Search value (sv): {sv}")
     
     # Base case - stop if no neighbors or sv too low
-    if not untraversedNeighbors or sv < 0.95:  # More lenient threshold
+    if not untraversedNeighbors or sv < svThreshold:  # More lenient threshold
         return traversed
     else:
         # Recursive case
@@ -62,8 +63,7 @@ def graphSearch(ontGraph, edgeSummation, nodeCount, decayFactor, currentNode, tr
 
             edgeSummation += trueWeight
             nodeCount +=  1
-            print(traversed)
-            graphSearch(ontGraph, edgeSummation, nodeCount, decayFactor, neighbor, traversed, subclassEdges, penalty)
+            graphSearch(ontGraph, edgeSummation, nodeCount, decayFactor, neighbor, traversed, subclassEdges, penalty, svThreshold)
     
     return traversed
 
@@ -80,7 +80,7 @@ def extractClassName(uri):
 def parseRdfToGraph(rdfFile):
     # Initialize graph and subclass edges
     rdfGraph = graph()
-    subclassEdges = set() # I won't lie I just couldn't be bothered to build around the classEdgeMap variable
+    subclassEdges = set()  # This will store the subclass relationships
     
     # Parse RDF file
     tree = ET.parse(rdfFile)
@@ -98,6 +98,7 @@ def parseRdfToGraph(rdfFile):
     
     # Dictionary to store classes and their subclasses
     classEdgeMap = defaultdict(list)
+    equivalentMap = defaultdict(list)
     nodeMap = {}
 
     # Add all classes as nodes first
@@ -112,7 +113,7 @@ def parseRdfToGraph(rdfFile):
         label = cls.find('./rdfs:label', namespaces)
         if label is None:
             continue
-        else: # sanaol may label.
+        else:  # sanaol may label.
             label = label.text
             rdfNode["name"] = label
 
@@ -123,7 +124,7 @@ def parseRdfToGraph(rdfFile):
         else:
             rdfNode["isKeyword"] = False
 
-        # create a node from the extracted data and add it to the grapph
+        # create a node from the extracted data and add it to the graph
         rdfNodeObj = node(rdfNode["name"], rdfNode["id"], rdfNode["isKeyword"]) 
         rdfGraph.addNode(rdfNodeObj)
         nodeMap[rdfNode["name"]] = rdfNodeObj 
@@ -136,30 +137,82 @@ def parseRdfToGraph(rdfFile):
                 nodeParentName = extractClassName(nodeParent)
                 classEdgeMap[nodeParentName].append(classId)
 
+        # Check for equivalentClass relationship
+        equivalents = cls.findall('./owl:equivalentClass', namespaces)
+        for equivalent in equivalents:
+            equivUri = equivalent.attrib.get('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource', '')
+            if equivUri:
+                equivId = extractClassName(equivUri)
+                equivalentMap[classId].append(equivId)
+                equivalentMap[equivId].append(classId)  # bidirectional
+
     # TEMPORARY
-    # Add edges between parent and child classes with weight 1 for now
+    # Add subclass edges (distinct from equivalent edges)
     for nodeParentName, children in classEdgeMap.items():
-        # Find parent node in nodeMap (either by name or ID)
-        parentNode = None
-        for rdfNodeObj in nodeMap.values():
-            if rdfNodeObj.name == nodeParentName or rdfNodeObj.id == nodeParentName:
-                parentNode = rdfNodeObj
-                break
-        
-        if parentNode is not None:
+        parentNode = next((n for n in nodeMap.values() if n.name == nodeParentName or n.id == nodeParentName), None)
+        if parentNode:
             for childName in children:
-                # Find child node in nodeMap
-                childNode = None
-                for rdfNodeObj in nodeMap.values():
-                    if rdfNodeObj.name == childName or rdfNodeObj.id == childName:
-                        childNode = rdfNodeObj
-                        break
-                
-                if childNode is not None:
-                    rdfGraph.addEdge(parentNode, childNode, 1)  # Add edge with weight 1
-                    subclassEdges.add((childNode.name, parentNode.name))
+                childNode = next((n for n in nodeMap.values() if n.name == childName or n.id == childName), None)
+                if childNode:
+                    rdfGraph.addEdge(parentNode, childNode, 1)
+                    subclassEdges.add((childNode.name, parentNode.name))  # Only add for subclass edges
+
+    # Add equivalentClass edges (distinct from subclass edges)
+    for sourceName, equivalents in equivalentMap.items():
+        sourceNode = next((n for n in nodeMap.values() if n.name == sourceName or n.id == sourceName), None)
+        if sourceNode:
+            for targetName in equivalents:
+                targetNode = next((n for n in nodeMap.values() if n.name == targetName or n.id == targetName), None)
+                if targetNode:
+                    rdfGraph.addEdge(sourceNode, targetNode, 1)  # You can adjust weight if needed
 
     return rdfGraph, subclassEdges
+
+def exportRelationshipsToExcel(rdfGraph, subclassEdges, output_path="relationships.xlsx"):
+    import pandas as pd
+    relationships = []
+
+    for edge in rdfGraph.getEdges():
+        parent = edge[0].name
+        child = edge[1].name
+        weight = edge[2]
+
+        relationships.append({
+            "parent": parent,
+            "child": child,
+            "weight": weight
+        })
+
+    df = pd.DataFrame(relationships)
+    df.to_excel(output_path, index=False)
+    print(f"\033[92mRelationship data exported to {output_path}\033[0m")
+
+def applyEdgeWeightsFromCSV(graph, csv_path):
+    with open(csv_path, mode='r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            source = row['parent']
+            target = row['child']
+            try:
+                weight = float(row['weight'])
+            except ValueError:
+                continue  # skip invalid weights
+
+            sourceNode = next((n for n in graph.getNodes() if n.id == source or n.name == source), None)
+            targetNode = next((n for n in graph.getNodes() if n.id == target or n.name == target), None)
+
+            if sourceNode and targetNode:
+                # Update the edge if it exists (undirected graph, so check both directions)
+                if graph.checkForEdge(sourceNode, targetNode):
+                    graph.graph[sourceNode][targetNode] = weight
+                    graph.graph[targetNode][sourceNode] = weight
+                else:
+                    # Add the edge if it doesn't exist
+                    graph.addEdge(sourceNode, targetNode, weight)
+
+                    # === START OF GOLDEN STANDARD EVALUATION ===
+import pandas as pd
+
 
 def parseSearchString(searchInput):
     # There are three special cases for searches, "", &&, ||
@@ -216,6 +269,7 @@ if __name__ == '__main__':
     
     # Parse RDF to graph
     ontGraph, subclassEdges = parseRdfToGraph(rdfFile)
+    exportRelationshipsToExcel(ontGraph, subclassEdges)
     
     # Print graph information
     if log_state != 0:
@@ -232,95 +286,166 @@ if __name__ == '__main__':
     url = conf["url"]
     neo4jauth = (conf["user"], conf["pass"])
 
-    # Get search query and process it.
-    searchIn = input("search:")
-    search = parseSearchString(searchIn)
+    queries = ["3d printing", "abaca fibers", "abaca fibers compound", "aerodynamics", "biomimetics", "biomimicry", "drug delivery", "machine learning", "sea lion-inspired", "snake robot", "sustainable energy", "tubercles wind turbine", "dengue", "forecasting", "heavy metal pollution",  "material science", "polypropylene", "sustainable energy", "dissolvable graphene-oxide silica nanohybrid microneedle", "filament making", "high-level quantum programming", "phtochromism", "microneedle", "biosorption santol peels", "photochromic", "photochromic", "block-based programming languages", "simple quantum computing", "snake drone", "composite materials", "biosorbent Sandorium koetjape"]
 
-    sym_spell = initializeSymspell()
-    if sym_spell:
-        for x in search["searchTerms"]:
-            for term in x:
-                suggestions = sym_spell.lookup(term, Verbosity.CLOSEST, max_edit_distance=2)
-                if suggestions and suggestions[0].term.lower() != term.lower():
-                    print(f"\033[93mCouldn't find '{term}'. Did you mean '{suggestions[0].term}'?\033[0m")
+    aveP = 0
+    aveR = 0
+    aveF = 0
 
 
-    ontologySearch = []
 
-    for searchGroup in search["searchTerms"]:
-        for searchTerm in searchGroup:
-            searchNodes = [
-                node for node in ontGraph.getNodes() 
-                if searchTerm.lower() in node.name.lower() or 
-                searchTerm.lower() in node.id.lower()
-            ]
-            
-            # Perform ontology search for each matching node
-            for searchNode in searchNodes:
-                res_ = graphSearch(ontGraph=ontGraph, edgeSummation=1, nodeCount=1, decayFactor=1.2, currentNode=searchNode, traversed=[], subclassEdges=subclassEdges)
+    for i in queries:
+
+        # Get search query and process it.
+        searchIn = i
+        search = parseSearchString(searchIn)
+
+        sym_spell = initializeSymspell()
+        if sym_spell:
+            for x in search["searchTerms"]:
+                for term in x:
+                    suggestions = sym_spell.lookup(term, Verbosity.CLOSEST, max_edit_distance=2)
+                    if suggestions and suggestions[0].term.lower() != term.lower():
+                        print(f"\033[93mCouldn't find '{term}'. Did you mean '{suggestions[0].term}'?\033[0m")
+
+        applyEdgeWeightsFromCSV(ontGraph, "C:/Users/davep/Downloads/edgeweights.csv")
+
+        ontologySearch = []
+
+        for searchGroup in search["searchTerms"]:
+            for searchTerm in searchGroup:
+                searchNodes = [
+                    node for node in ontGraph.getNodes() 
+                    if searchTerm.lower() in node.name.lower() or 
+                    searchTerm.lower() in node.id.lower()
+                ]
                 
-                # Add unique node names to ontologySearch
-                for resultNode in res_:
-                    if resultNode.name not in ontologySearch:
-                        ontologySearch.append(resultNode.name)
+                # Perform ontology search for each matching node
+                for searchNode in searchNodes:
+                    res_ = graphSearch(ontGraph=ontGraph, edgeSummation=1, nodeCount=1, decayFactor=1.2, currentNode=searchNode, traversed=[], subclassEdges=subclassEdges)
+                    
+                    # Add unique node names to ontologySearch
+                    for resultNode in res_:
+                        if resultNode.name not in ontologySearch:
+                            ontologySearch.append(resultNode.name)
 
-    print("keywords found:", ontologySearch)
+        # print("keywords found:", ontologySearch)
 
-    searchRes = []
-
-    # Connect to neo4j
-    with GraphDatabase.driver(url, auth=neo4jauth) as driver:
-        # Verify connection, quit if connection doesn't exist.
-        try:
-            driver.verify_connectivity()
-        except:
-            print("\033[91mFATAL: Could not connect to neo4j, perhaps it is offline, or you provided the wrong url.\033[0m")
-            exit(0)
-        
         searchRes = []
-        
-        # Use ontologySearch results instead of raw search terms
-        for ontology_term in ontologySearch:
-            print(ontology_term)
-            res = []
-            query = """
-            MATCH (n:keyword)
-            WHERE n.name CONTAINS $term OR n.id CONTAINS $term
-            MATCH (n)-[m:in]->(l:paper)
-            RETURN DISTINCT l.name
-            """
-            
-            records, summary, keys = driver.execute_query(
-                query,
-                term=ontology_term,
-                database_="neo4j"
-            )
 
-            for r in records:
-                data = r['l.name']
-                if data not in res:
-                    res.append(data)
-            
-            searchRes.append(res)
+        if i=="forecasting":
+            print("wawa", ontologySearch)
 
-    # Process and return the results based on the operators
-    if not searchRes:  # Handle empty results case
-        resultSet = []
-    else:
-        resultSet = set(searchRes[0])  # Start with first set of results
-        
-        # Apply operators if we have multiple search terms
-        if len(searchRes) > 1 and 'operators' in search:
-            for index, s in enumerate(searchRes[1:]):
-                operator = search["operators"][index] if index < len(search["operators"]) else "||"
+        # Connect to neo4j
+        with GraphDatabase.driver(url, auth=neo4jauth) as driver:
+            # Verify connection, quit if connection doesn't exist.
+            try:
+                driver.verify_connectivity()
+            except:
+                # print("\033[91mFATAL: Could not connect to neo4j, perhaps it is offline, or you provided the wrong url.\033[0m")
+                exit(0)
+            
+            searchRes = []
+            
+            # Use ontologySearch results instead of raw search terms
+            for ontology_term in ontologySearch:
+                # print(ontology_term)
+                res = []
+                query = """
+                MATCH (n:keyword)
+                WHERE n.name CONTAINS $term OR n.id CONTAINS $term
+                MATCH (n)-[m:in]->(l:paper)
+                RETURN DISTINCT l.rescode
+                """
                 
-                if operator == "&&":
-                    resultSet &= set(s)  # Intersection
-                elif operator == "||":
-                    resultSet |= set(s)  # Union
+                records, summary, keys = driver.execute_query(
+                    query,
+                    term=ontology_term,
+                    database_="neo4j"
+                )
 
-    # Sort the results (Alphabetical)
-    resultSet = list(resultSet) 
+                # Optionally: silence notifications in your own logs
+                if summary.notifications:
+                    summary.notifications.clear()  # Optional: suppress in custom log display
 
-    print("Result:", resultSet)
-    print("Count:", ontologySearch)
+                for r in records:
+                    data = r['l.rescode']
+                    if data not in res:
+                        res.append(data)
+                
+                searchRes.append(res)
+
+        # Process and return the results based on the operators
+        if not searchRes:  # Handle empty results case
+            resultSet = []
+        else:
+            resultSet = set(searchRes[0])  # Start with first set of results
+            
+            # Apply operators if we have multiple search terms
+            if len(searchRes) > 1 and 'operators' in search:
+                for index, s in enumerate(searchRes[1:]):
+                    operator = search["operators"][index] if index < len(search["operators"]) else "||"
+                    
+                    if operator == "&&":
+                        resultSet &= set(s)  # Intersection
+                    elif operator == "||":
+                        resultSet |= set(s)  # Union
+
+        # Sort the results (Alphabetical)
+        resultSet = list(resultSet) 
+
+        # print("Result:", resultSet)
+        # print("Count:", ontologySearch)
+
+        # Load golden standard CSV
+        gold_path = "C:/Users/davep/Downloads/Golden_Standard_Semantic_Loose_Matching_CLEANED.csv"
+        gold_df = pd.read_csv(gold_path)
+
+        # Ask for the original user query used for this search
+        raw_query = searchIn
+
+        # Filter expected codes from the golden standard
+        expected_codes = gold_df[gold_df["Query"].str.lower() == raw_query]["Code"].dropna().unique().tolist()
+        retrieved_codes = resultSet  # This is your final system result
+
+        # Convert to sets for comparison
+        expected_set = set(expected_codes)
+        retrieved_set = set(resultSet)
+
+        # Calculate true positives, false positives, and false negatives
+        tp = len(expected_set & retrieved_set)
+        fp = len(retrieved_set - expected_set)
+        fn = len(expected_set - retrieved_set)
+
+        # Special case: both sets are empty (nothing expected, nothing retrieved)
+        if not expected_set and not retrieved_set:
+            precision = recall = f1_score = 1.0
+        else:
+            precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+            recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+            f1_score = (2 * precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
+
+        # Output results
+        # print(f"\n=== EVALUATION RESULTS for query '{raw_query}' ===")
+        # print(f"Expected codes: {sorted(expected_codes)}")
+        # print(f"Retrieved codes: {sorted(retrieved_codes)}")
+        # print(f"True Positives: {tp}, False Positives: {fp}, False Negatives: {fn}")
+        # print(f"Precision: {precision:.4f}")
+        # print(f"Recall: {recall:.4f}")
+        # print(f"F1 Score: {f1_score:.4f}")
+
+        with open("demofile.txt", "a") as f:
+            f.write(f"\n=== EVALUATION RESULTS for query '{raw_query}' ===")
+            f.write(f"\nExpected codes: {sorted(expected_codes)}")
+            f.write(f"\nRetrieved codes: {sorted(retrieved_codes)}")
+            f.write(f"\nTrue Positives: {tp}, False Positives: {fp}, False Negatives: {fn}")
+            f.write(f"\nPrecision: {precision:.4f}")
+            f.write(f"\nRecall: {recall:.4f}")
+            f.write(f"\nF1 Score: {f1_score:.4f}")
+
+        aveP += precision
+        aveR += recall
+        aveF += f1_score
+        # === END OF GOLDEN STANDARD EVALUATION ===
+
+    print("ave. precision:" + str(aveP/len(queries)), "ave. recall:" + str(aveR/len(queries)), "ave. f1_score:" + str(aveF/len(queries)))
