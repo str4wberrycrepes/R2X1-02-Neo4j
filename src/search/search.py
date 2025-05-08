@@ -265,7 +265,8 @@ def initializeSymspell():
 if __name__ == '__main__':
     # Les try a different type of input (for fun)
     rdfFile = sys.argv[1]
-    log_state = sys.argv[2] if len(sys.argv) > 2 else 0
+    searchState = sys.argv [2] if len(sys.argv) > 2 else 0
+    log_state = sys.argv[3] if len(sys.argv) > 3 else 0
     
     # Parse RDF to graph
     ontGraph, subclassEdges = parseRdfToGraph(rdfFile)
@@ -286,13 +287,12 @@ if __name__ == '__main__':
     url = conf["url"]
     neo4jauth = (conf["user"], conf["pass"])
 
+    # for testing multiple queries
     queries = ["3d printing", "abaca fibers", "abaca fibers compound", "aerodynamics", "biomimetics", "biomimicry", "drug delivery", "machine learning", "sea lion-inspired", "snake robot", "sustainable energy", "tubercles wind turbine", "dengue", "forecasting", "heavy metal pollution",  "material science", "polypropylene", "sustainable energy", "dissolvable graphene-oxide silica nanohybrid microneedle", "filament making", "high-level quantum programming", "phtochromism", "microneedle", "biosorption santol peels", "photochromic", "photochromic", "block-based programming languages", "simple quantum computing", "snake drone", "composite materials", "biosorbent Sandorium koetjape"]
 
     aveP = 0
     aveR = 0
     aveF = 0
-
-
 
     for i in queries:
 
@@ -332,9 +332,6 @@ if __name__ == '__main__':
         # print("keywords found:", ontologySearch)
 
         searchRes = []
-
-        if i=="forecasting":
-            print("wawa", ontologySearch)
 
         # Connect to neo4j
         with GraphDatabase.driver(url, auth=neo4jauth) as driver:

@@ -1,0 +1,477 @@
+airfoil|2
+corrugation depth|1
+corrugations|1
+drag|1
+lift|1
+vortices|1
+vertical axis wind turbine|3
+vawt|3
+3d-printed turbine|4
+3d-model|4
+h-darrieus|2
+dragonfly wings|1
+naca 0021|1
+fx 63-137|1
+autodesk fusion 360|1
+fused deposition modelling 3d-printer|1
+fdm 3d-printer|1
+polylactic acid|2
+initial fan testing|1
+ift|1
+biomimicry|5
+horizontal axis wind turbine|1
+hawt|1
+small scale|2
+auto-gyrating seed|1
+betz limit|1
+optimization|1
+renewable energy|2
+wind energy|2
+benguet pine|1
+naca 4412|1
+fusion 360|3
+ansys cfd|1
+jose vera santos memorial herbarium|1
+lift to drag ratio|1
+ldr|1
+ansys fluent|1
+sinusoidal serrations|1
+modified airfoil|1
+noise reduction|1
+ffowcs williams-hawkings|1
+naca 0018|2
+turbine simulation|1
+gait disorders|1
+material science|1
+medical device|1
+orthosis|1
+stratum compactum|1
+striped bass fish|1
+bass skin exotendon device|1
+foot harness|1
+polyethylene terephthalate|1
+pet|2
+universal testing machine|1
+utm|1
+dual-turbine system|1
+emergency power source|1
+power efficiency|1
+savonius turbine|1
+turgo turbine|1
+typhoon|1
+ltspice|1
+selection matrix|1
+pla|1
+blockage|1
+flood prevention|1
+self-cleaning|1
+water turbine|1
+archimedes screw-based storm drain|1
+polyvinyl chloride pipes|1
+pvc|1
+trench grating|1
+polyethylene terephthalate plastic|1
+in silico|7
+drug development|4
+analog compound|1
+binding affinity|3
+colorectal cancer|1
+cyclin-dependent kinase|1
+kaempferitrin|1
+molecular docking|6
+entity-component-system|1
+debris|1
+low earth orbit satellite|1
+unreal engine|1
+simulation|1
+norad number|1
+simplified general perturbations model|1
+cpu utilization|1
+gpu utilization|1
+large-scale atomic/molecular massively parallel simulator|1
+airebo-m|1
+molecular dynamics|1
+silicon|1
+graphene chemical vapoer deposition|1
+membered rings|1
+logistic regression|1
+predictive modeling|1
+student productivity|1
+task prioritization|1
+weighted-scoring model|1
+survey|1
+general weighted average|1
+calcium hydroxide|2
+corn husk fiber|1
+fiber alkaline treatment|1
+fiber-reinforced concrete|1
+mechanical properties|2
+sodium hydroxide|1
+tensile strength|4
+flexural strength|3
+optical correcting attachment|1
+aberrated telescope image|1
+slanted edge test|1
+modulation transfer function|1
+optical correction|1
+celestron 114eq telescope|1
+polyvinyl chloride pipe|1
+3d-printing|2
+core accretion|1
+disk instability|1
+gas giants|1
+principal component analysis|1
+nasa|2
+semi-major axis|2
+stellar mass|1
+stellar temperature|1
+stellar metallicity|1
+planetary mass|1
+active site|1
+amino acids|1
+dengue|1
+hydrogen bonds|1
+hydrophobic interactions|2
+ligand|2
+lipinski’s rule of 5|3
+phytochemical|2
+glabridin|1
+licorice|1
+mosquito|1
+glycyrrhizin|1
+hypericin|1
+a-ketoamide-11r|1
+pseudohypericin|1
+cystoketal|1
+cyanidin 3-glucoside|1
+lopinavir|1
+natural fiber|2
+polymers|2
+textile|1
+saba banana|1
+musa acuminata|1
+musa balbisiana|1
+bast fiber|1
+cotton fiber|1
+polyethylene|2
+philippine textile research institute|1
+ptri|1
+fabric|1
+compression molding|1
+water absorbency|1
+sem imaging|3
+caffeine|1
+chlorogenic acid|1
+moisture content|1
+ph|2
+roasting methods|1
+spectrophotometry|3
+robusta coffee bean|1
+physicochemical properties|1
+drum roasting|1
+hot air roasting|1
+open-flame pan roasting|1
+anti-biofilm|1
+biofilm inhibition|1
+biofilm formation|1
+cananga odorata|1
+essential oil|1
+microtiter plate|1
+linalool|1
+pseudomonas aeruginosa|3
+bacillus subtilis|1
+bee propolis|1
+microbial growth|1
+eagle effect|1
+spectrostar nano microplate reader|1
+graphpad prism|1
+anxiety disorder|1
+diagnosis|1
+generalized anxiety disorder|1
+genetic biomarker|1
+manifestation|1
+systematic review|1
+prisma guidelines|1
+quads tool|1
+cochrane library|1
+pubmed|1
+google scholar|1
+cadima|1
+article searching and screening|1
+genetic polymorphism|1
+gene|1
+allele|1
+genotype|1
+chanos chanos|1
+functional properties|1
+gelatin|1
+lyophilization|1
+milkfish|1
+scales|1
+oven-dried|1
+trabajo market|1
+de la salle university|1
+uv-vis spectrophotometer|1
+proximate composition|2
+pipac|1
+ateneo de manila university|1
+kjeldahl procedure|1
+ftir spectroscopy analysis|1
+philippine science high school - main campus|3
+pshs-mc|5
+edwiser remui|1
+e-lms|1
+layouts|1
+moodle|1
+navigational efficiency|1
+ui|1
+interface|1
+knowledge hub|1
+khub|2
+pshs|3
+antibiotic resistance|1
+cytotoxic property|1
+crude leaf extract|1
+eskape pathogens|1
+siamese ginger|1
+tagbak-babae|1
+staphylococcus aureus|2
+soxhlet extraction|2
+kirby-bauer disk diffusion|2
+broth microdilution|1
+getamicin|1
+clindamycin|1
+university of the philippines diliman|1
+up diliman|1
+mtt assay|1
+angiogenesis|1
+calcineurin|1
+chemotherapy|1
+pharmacokinetics|1
+cyclosporine-a|1
+voclosporin|1
+bioavailability|1
+cyclosporine conjugate|1
+nfat inhibition|1
+arduino|1
+embedded systems|1
+machine learning|2
+pest control|1
+cnn|1
+convolutional neural network|1
+mosquito wingbeat frequencies|1
+recycled high-density polyethylene|1
+characterization|1
+recycled plastics|1
+abaca fiber|1
+fourier transform infrared|3
+water repellency|1
+water absorbtion|1
+potability|1
+rain|1
+readycult|1
+water content|1
+water quality|1
+ysi meter|1
+coliform|1
+escherichia coli|1
+philippine science high school|3
+ph level|1
+conductivity|1
+dissolved solids|1
+acrylic paint|1
+calcium carbonate|1
+extender pigment|1
+manila clam shell|1
+venerupis philippinarum|1
+antibiotic development|1
+antimicrobial activity|1
+protein sequences|1
+bioinformatics|1
+proteolytic enzyme|1
+antimicrobial peptide|1
+gumamela leaf|1
+camp database|1
+cellppd calculator|1
+proteinase k|1
+trypsin|1
+pepsin 1.3|1
+pepsin 2|1
+biodegradable|1
+bioplastic|1
+pineapple stem|1
+starch|1
+starch-based plastic|1
+cassava starch based-plastics|1
+high density polyethylene|1
+ftir spectroscopy machine|1
+biochar|1
+complete inorganic fertilizer|1
+pyrolysis|1
+spent coffee grounds|1
+bioavailable zinc|1
+plant growth|1
+nutrient amendment|1
+arabica coffee bean|1
+silty loam soil|1
+philippine coconut authority|1
+organic carbon|1
+total nitrogen|1
+cocoa pod husk|1
+rice noodle|1
+by-product|1
+cooking properties|1
+sensory evaluation|1
+blessed harvest marketing|1
+traditional rice noodle recipe by judy|1
+breaking rate|1
+rehydration rate|1
+cooking loss rate|1
+standard official aoac methods|1
+dost-fnri|1
+coefficient of lift|1
+power coefficient|1
+archimedean screw turbine|1
+small scale electric generator|1
+alternative self-sufficient power source|1
+flow rate|1
+power outages|1
+rain gutter|1
+spout system|1
+3d printed turbine|1
+modeling of amiloride derivatives|1
+cytochrome bd oxidase|1
+mycobacterium tuberculosis|1
+inhibitors of cytochrome bd oxidase|1
+drug-resistant tuberculosis|1
+hm2-16f|1
+in vitro|1
+amiloride derivatives|1
+tuberculosis|1
+menaquinone-9 binding site|1
+nd-011992|1
+telacebec|1
+pi-stacking interactions|1
+pyrazinamide|1
+chicken manure|1
+indigenous microorganism|2
+poultry farm|1
+wood ash|1
+fly infestation|1
+musca domestica|1
+permethrin|1
+cream formulation|1
+antimicrobial testing|1
+physicochemical testing|1
+ampalaya seed|1
+ampalaya|1
+ampalaya seed oil-based cream|1
+antimicrobial inhibition|1
+free fatty acids|1
+difenoconazole|2
+flavonoid|1
+inhibition zone|1
+panama disease|1
+well diffusion|1
+lagundi|1
+fusarium oxysporum|1
+fusarium wilt|1
+antifungal|1
+vitex negundo root extract|1
+ascomycetes|1
+fungus|1
+fusarium oxysporum f. sp. cubense|1
+fungicide|1
+cox-1|1
+cox-2|1
+5-lox|1
+chlorogenic acidchronic inflammatory diseases|1
+guava|1
+nonsteroidal anti-inflammatory drugs|1
+oxygenase|1
+nsaid|1
+doh data drop|1
+driver system|1
+interrupted time series analysis|1
+quezon city|1
+seven-day moving average|1
+covid-19|1
+traffic accident|1
+atr-ftir spectroscopy|1
+freshwater|1
+microplastics|1
+pollution|1
+marine ecosystem|1
+biodegradation|2
+low density polyethylene|1
+las piñas-parañaque wetland park|2
+manila bay|1
+screening|1
+polyethylene-degrading aquatic bacteria|1
+16s rrna sequencing|2
+achromobacter xylosoxidans|1
+luteimonas tolerans|1
+paracoccus yeei|1
+sodis|1
+parabolic reflector|1
+solar disinfection|1
+water disinfection|1
+modification of sodis|1
+food packaging|1
+heat exposure|1
+liquid media exposure|1
+petg|1
+polyethylene terepthalate glycol|1
+complex numbers|1
+mathematics education|1
+learning modules|1
+web-based learning|1
+web interface|1
+reliability coefficent|1
+empirical analysis|1
+hot jupiters|1
+planetary formation|1
+roche limit|1
+situ formation|1
+disk migration|1
+high eccentricity tidal migration|1
+51 pegasi b|1
+hd 189733|1
+hd 209458b|1
+wasp 12b|1
+wasp 22b|1
+roche limit ratio|1
+dominant hot jupiter origin theory|1
+pshs announcement systems|1
+browser extension|1
+google api|1
+manifest v3|1
+notification system|1
+html|1
+css|1
+javascript|1
+jquery|1
+gclass|1
+system usability scale|1
+pisay direct|1
+web scraping|1
+mangrove|1
+mangrove sediment|1
+plastic|1
+plastic-degrading bacteria|1
+mineral salt media|1
+agar|1
+graphite|1
+geometry optimization|1
+sustainability|1
+moisture driven electricity generation|1
+asymmetric hygroscopic structure|1
+salt hydrogel|1
+bioremediation|1
+organophosphate|1
+pesticide|1
+profenofo|1
+staphylococcus epidermidis|1
+high-perfromance liquid chromatogrpahy|1
+ligninolytic bacteria|1
+nutrient broth|1
